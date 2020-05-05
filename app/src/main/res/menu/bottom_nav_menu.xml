@@ -4,19 +4,19 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/src_images_tabiconsactive_av"
-        android:title="@string/title_home" />
+        android:title="热门" />
 
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/src_images_tabicons_video"
-        android:title="@string/title_dashboard" />
+        android:title="视频" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/src_images_tabicons_category"
         android:title="@string/title_notifications" />
     <item
-        android:id="@+id/navigation_shoucang"
+        android:id="@+id/navigation_fl"
         android:icon="@drawable/src_images_tabicons_like"
         android:title="收藏" />
     <item

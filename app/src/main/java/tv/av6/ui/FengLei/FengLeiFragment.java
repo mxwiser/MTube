@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import tv.av6.R;
-import tv.av6.ui.home.HomeViewModel;
 
 public class FengLeiFragment extends Fragment {
 
@@ -22,8 +21,8 @@ public class FengLeiFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         flViewModel = ViewModelProviders.of(this).get(FengLeiViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
+        View root = inflater.inflate(R.layout.fragment_fl, container, false);
+        final TextView textView = root.findViewById(R.id.text_fl);
         flViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
