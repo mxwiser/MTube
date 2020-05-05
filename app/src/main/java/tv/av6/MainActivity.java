@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
@@ -36,39 +37,19 @@ public class MainActivity extends AppCompatActivity {
   private   MenuItem  backItem;
   private   MenuItem  thisItem;
   boolean backdesktop=false;
-    NavController navController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            this.getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        }
-
-
-        this.getSupportActionBar().hide();
-        navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications,R.id.navigation_fl,R.id.navigation_my)
-                .build();
-         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
-        navView.setItemIconTintList(null);
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        closeAnimation(navView);
+         this.getSupportActionBar().hide();
+         navView = findViewById(R.id.nav_view);
+         navView.setItemIconTintList(null);
+         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+         closeAnimation(navView);
          backItem=   navView.getMenu().findItem(R.id.navigation_home);
          thisItem= navView.getMenu().findItem(R.id.navigation_home);
     }
-
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -113,27 +94,27 @@ public class MainActivity extends AppCompatActivity {
                 //在这里替换图标
                 item.setIcon(R.drawable.src_images_tabiconsactive_av);
                 item.setTitle(addColor("热门",getResources().getColor(R.color.feng)));
-                navController.navigate(R.id.navigation_home);
+
                 break;
             case R.id.navigation_dashboard:
                 item.setIcon(R.drawable.src_images_tabiconsactive_video);
                 item.setTitle(addColor("视频",getResources().getColor(R.color.feng)));
-                navController.navigate(R.id.navigation_dashboard);
+
                 break;
             case R.id.navigation_notifications:
                 item.setIcon(R.drawable.src_images_tabiconsactive_category);
                 item.setTitle(addColor("分类",getResources().getColor(R.color.feng)));
-                navController.navigate(R.id.navigation_notifications);
+
                 break;
             case  R.id.navigation_fl:
                 item.setIcon(R.drawable.src_images_tabiconsactive_like);
                 item.setTitle(addColor("收藏",getResources().getColor(R.color.feng)));
-                navController.navigate(R.id.navigation_fl);
+
                 break;
             case  R.id.navigation_my:
                 item.setIcon(R.drawable.src_images_tabiconsactive_my);
                 item.setTitle(addColor("我的",getResources().getColor(R.color.feng)));
-                navController.navigate(R.id.navigation_my);
+
                 break;
 
         }
