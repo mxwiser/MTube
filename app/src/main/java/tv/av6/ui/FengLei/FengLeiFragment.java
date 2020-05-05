@@ -1,4 +1,4 @@
-package tv.av6.ui.dashboard;
+package tv.av6.ui.FengLei;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,21 +13,21 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import tv.av6.R;
+import tv.av6.ui.home.HomeViewModel;
 
-public class DashboardFragment extends Fragment {
+public class FengLeiFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private FengLeiViewModel flViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        flViewModel = ViewModelProviders.of(this).get(FengLeiViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        flViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText("ddddd");
+                textView.setText(s);
             }
         });
         return root;
