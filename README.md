@@ -19,8 +19,8 @@
 ##关于作者
 
 ```javascript
-var ihubo = {
-  nickName  : "Vsine",
+var vsine = {
+  nickName  : "小文",
   site : "qvqol.com"
 }
 ```
