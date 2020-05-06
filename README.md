@@ -21,6 +21,6 @@
 ```javascript
 var ihubo = {
   nickName  : "Vsine",
-  site : "http://qvqol.com"
+  site : "qvqol.com"
 }
 ```
