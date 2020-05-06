@@ -53,11 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
             backdesktop=true;
             switchNav(item);
             return false;
@@ -68,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-
         if (!backdesktop){
             return  super.onKeyDown(keyCode,event);
         }
@@ -77,16 +72,12 @@ public class MainActivity extends AppCompatActivity {
             switchNav(backItem);
             backdesktop=false;
         }
-
         return true;
     }
-
     private void switchNav(MenuItem item){
-
         if (thisItem!=item){
             backItem=thisItem;
         }
-
         thisItem=item;
         resetToDefaultIcon();//重置到默认不选中图片
         switch (item.getItemId()) {
@@ -94,33 +85,27 @@ public class MainActivity extends AppCompatActivity {
                 //在这里替换图标
                 item.setIcon(R.drawable.src_images_tabiconsactive_av);
                 item.setTitle(addColor("热门",getResources().getColor(R.color.feng)));
-
                 break;
             case R.id.navigation_dashboard:
                 item.setIcon(R.drawable.src_images_tabiconsactive_video);
                 item.setTitle(addColor("视频",getResources().getColor(R.color.feng)));
-
                 break;
             case R.id.navigation_notifications:
                 item.setIcon(R.drawable.src_images_tabiconsactive_category);
                 item.setTitle(addColor("分类",getResources().getColor(R.color.feng)));
-
                 break;
             case  R.id.navigation_fl:
                 item.setIcon(R.drawable.src_images_tabiconsactive_like);
                 item.setTitle(addColor("收藏",getResources().getColor(R.color.feng)));
-
                 break;
             case  R.id.navigation_my:
                 item.setIcon(R.drawable.src_images_tabiconsactive_my);
                 item.setTitle(addColor("我的",getResources().getColor(R.color.feng)));
-
                 break;
 
         }
 
     }
-
     private void resetToDefaultIcon() {
         MenuItem home =  navView.getMenu().findItem(R.id.navigation_home);
         home.setIcon(R.drawable.src_images_tabicons_av);
@@ -149,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return builder;
     }
-
     @SuppressLint("RestrictedApi")
     public void closeAnimation(BottomNavigationView view) {
 
@@ -167,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
         mMenuView.updateMenuView();
     }
 
-
     private <T> T getField(Class targetClass, Object instance, String fieldName) {
         try {
             Field field = targetClass.getDeclaredField(fieldName);
@@ -181,8 +164,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
-
-
     private void setField(Class targetClass, Object instance, String fieldName, Object value) {
         try {
             Field field = targetClass.getDeclaredField(fieldName);
