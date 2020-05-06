@@ -1,4 +1,4 @@
-package tv.mtube;
+package com.qvqol.mtube;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -12,9 +12,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
-import tv.mtube.ui.mynav.BottomNavigationItemView;
-import tv.mtube.ui.mynav.BottomNavigationMenuView;
-import tv.mtube.ui.mynav.BottomNavigationView;
+import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
+import com.qvqol.mtube.ui.mynav.BottomNavigationMenuView;
+import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
