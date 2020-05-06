@@ -6,19 +6,18 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import tv.av6.ui.mynav.BottomNavigationItemView;
+import tv.av6.ui.mynav.BottomNavigationMenuView;
+import tv.av6.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+
 
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
   private   MenuItem  backItem;
   private   MenuItem  thisItem;
   boolean backdesktop=false;
-
+  private GestureDetector gd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,26 +35,22 @@ public class MainActivity extends AppCompatActivity {
 
          navView.setItemIconTintList(null);
          navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-         closeAnimation(navView);
+         //closeAnimation(navView);
 
-         backItem=   navView.getMenu().findItem(R.id.navigation_home);
-         thisItem= navView.getMenu().findItem(R.id.navigation_home);
+         backItem=navView.getMenu().findItem(R.id.navigation_home);
+         thisItem=navView.getMenu().findItem(R.id.navigation_home);
+         //resetToDefaultIcon();
+         //switchNav(thisItem);
+
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        View v=findViewById(R.id.nav_view);
-        v.setOnLongClickListener(new View.OnLongClickListener(){
-            @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(getApplication(),"123",Toast.LENGTH_LONG).show();
-                return true;
-            }
-        });
-
     }
+
+
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
