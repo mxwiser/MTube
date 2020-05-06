@@ -6,10 +6,12 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
-import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.TextView;
+import q.rorbin.badgeview.Badge;
+import q.rorbin.badgeview.QBadgeView;
 import tv.av6.ui.mynav.BottomNavigationItemView;
 import tv.av6.ui.mynav.BottomNavigationMenuView;
 import tv.av6.ui.mynav.BottomNavigationView;
@@ -17,31 +19,46 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
 import java.lang.reflect.Field;
-
-
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
   private   AppBarConfiguration appBarConfiguration;
   private   MenuItem  backItem;
   private   MenuItem  thisItem;
-  boolean backdesktop=false;
-  private GestureDetector gd;
+  private  BottomNavigationItemView homeitem,videoitem,flitem,likeitem,myitem;
+  Badge homebagde,videobadge,flbadge,likebadge,mybadge;
+  private boolean backdesktop=false;
+  
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
          this.getSupportActionBar().hide();
          navView = findViewById(R.id.nav_view);
-
          navView.setItemIconTintList(null);
          navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
          //closeAnimation(navView);
-
          backItem=navView.getMenu().findItem(R.id.navigation_home);
          thisItem=navView.getMenu().findItem(R.id.navigation_home);
-         //resetToDefaultIcon();
-         //switchNav(thisItem);
+         initView();
+    }
 
+    private void initView(){
+        homeitem=navView.findViewById(R.id.navigation_home);
+        videoitem=navView.findViewById(R.id.navigation_dashboard);
+        flitem=navView.findViewById(R.id.navigation_notifications);
+        likeitem=navView.findViewById(R.id.navigation_fl);
+        myitem=navView.findViewById(R.id.navigation_my);
+        homebagde=new QBadgeView(this).bindTarget(homeitem);
+        videobadge=new QBadgeView(this).bindTarget(videoitem);
+        flbadge=new QBadgeView(this).bindTarget(flitem);
+        likebadge=new QBadgeView(this).bindTarget(likeitem);
+        mybadge=new QBadgeView(this).bindTarget(myitem);
+        homebagde.setBadgeGravity(Gravity.END|Gravity.TOP);
+        videobadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+        flbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+        likebadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+        mybadge.setBadgeGravity(Gravity.END|Gravity.TOP);
 
     }
 
@@ -49,10 +66,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
     }
-
-
-
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -76,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-
     private void switchNav(MenuItem item){
         if (thisItem!=item){
             backItem=thisItem;
@@ -117,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
     private void resetToDefaultIcon() {
         MenuItem home =  navView.getMenu().findItem(R.id.navigation_home);
         home.setIcon(R.drawable.src_images_tabicons_av);
@@ -129,15 +138,12 @@ public class MainActivity extends AppCompatActivity {
         MenuItem fl=navView.getMenu().findItem(R.id.navigation_notifications);
         fl.setIcon(R.drawable.src_images_tabicons_category);
         fl.setTitle(addColor("分类",getResources().getColor(R.color.black)));
-
         MenuItem sc=navView.getMenu().findItem(R.id.navigation_fl);
         sc.setIcon(R.drawable.src_images_tabicons_like);
         sc.setTitle(addColor("收藏",getResources().getColor(R.color.black)));
-
         MenuItem my=navView.getMenu().findItem(R.id.navigation_my);
         my.setIcon(R.drawable.src_images_tabicons_my);
         my.setTitle(addColor("我的",getResources().getColor(R.color.black)));
-
     }
     private SpannableStringBuilder addColor(CharSequence text, int color) {
         SpannableStringBuilder builder = new SpannableStringBuilder(text);

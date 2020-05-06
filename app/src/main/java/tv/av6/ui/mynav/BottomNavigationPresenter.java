@@ -22,10 +22,12 @@ import com.google.android.material.internal.ParcelableSparseArray;
 
 
 /** @hide */
+@SuppressLint("RestrictedApi")
 @RestrictTo(LIBRARY_GROUP)
 public class BottomNavigationPresenter implements MenuPresenter {
     private MenuBuilder menu;
     private BottomNavigationMenuView menuView;
+
     private boolean updateSuspended = false;
     private int id;
 
