@@ -23,6 +23,7 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
+
         android:id="@+id/navigation_fl"
         android:name="com.qvqol.mtube.ui.FengLei.FengLeiFragment"
         android:label="分类"
