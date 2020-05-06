@@ -7,29 +7,29 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="tv.mtube.ui.home.HomeFragment"
+        android:name="com.qvqol.mtube.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="tv.mtube.ui.dashboard.DashboardFragment"
+        android:name="com.qvqol.mtube.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="tv.mtube.ui.notifications.NotificationsFragment"
+        android:name="com.qvqol.mtube.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_fl"
-        android:name="tv.mtube.ui.FengLei.FengLeiFragment"
+        android:name="com.qvqol.mtube.ui.FengLei.FengLeiFragment"
         android:label="分类"
         tools:layout="@layout/fragment_fl" />
     <fragment
         android:id="@+id/navigation_my"
-        android:name="tv.mtube.ui.MyUser.MyUserFragment"
+        android:name="com.qvqol.mtube.ui.MyUser.MyUserFragment"
         android:label="我的"
         tools:layout="@layout/fragment_my" />
 

@@ -18,7 +18,7 @@ package com.qvqol.mtube.ui.mynav;
 
 
 import com.google.android.material.R;
-import static tv.mtube.ui.mynav.MaterialThemeOverlay.wrap;
+import static com.qvqol.mtube.ui.mynav.MaterialThemeOverlay.wrap;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

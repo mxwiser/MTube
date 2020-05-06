@@ -1,4 +1,4 @@
-package tv.mtube;
+package com.qvqol.mtube;
 
 import android.os.Bundle;
 
