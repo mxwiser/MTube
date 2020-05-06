@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import tv.mtube.R;
+import com.qvqol.mtube.R;
 
 public class DashboardFragment extends Fragment {
 
