@@ -153,47 +153,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return builder;
     }
-    @SuppressLint("RestrictedApi")
-    public void closeAnimation(BottomNavigationView view) {
-        BottomNavigationMenuView mMenuView = (BottomNavigationMenuView) view.getChildAt(0);
-        for (int i = 0; i < mMenuView.getChildCount(); i++) {
-            BottomNavigationItemView button = (BottomNavigationItemView) mMenuView.getChildAt(i);
 
-            TextView mLargeLabel = getField(button.getClass(), button, "largeLabel");
-            TextView mSmallLabel = getField(button.getClass(), button, "smallLabel");
 
-            float mSmallLabelSize = mSmallLabel.getTextSize();
-            setField(button.getClass(), button, "shiftAmount", 0F);
-            setField(button.getClass(), button, "scaleUpFactor", 1F);
-            setField(button.getClass(), button, "scaleDownFactor", 1F);
-            mLargeLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, mSmallLabelSize);
-        }
-        mMenuView.updateMenuView();
-    }
-    private <T> T getField(Class targetClass, Object instance, String fieldName) {
-        try {
-            Field field = targetClass.getDeclaredField(fieldName);
 
-            field.setAccessible(true);
-            return (T) field.get(instance);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    private void setField(Class targetClass, Object instance, String fieldName, Object value) {
-        try {
-            Field field = targetClass.getDeclaredField(fieldName);
-            field.setAccessible(true);
-            field.set(instance, value);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 
