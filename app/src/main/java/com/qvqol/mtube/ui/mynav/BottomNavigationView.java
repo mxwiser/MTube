@@ -252,10 +252,12 @@ public class BottomNavigationView extends FrameLayout {
         applyWindowInsets();
     }
 
+    @SuppressLint("RestrictedApi")
     private void applyWindowInsets() {
         ViewUtils.doOnApplyWindowInsets(
                 this,
                 new ViewUtils.OnApplyWindowInsetsListener() {
+                    @SuppressLint("RestrictedApi")
                     @NonNull
                     @Override
                     public androidx.core.view.WindowInsetsCompat onApplyWindowInsets(
