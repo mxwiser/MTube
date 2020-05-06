@@ -261,7 +261,6 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
         }
 
         refreshDrawableState();
-
         // Set the item as selected to send an AccessibilityEvent.TYPE_VIEW_SELECTED from View, so that
         // the item is read out as selected.
         setSelected(checked);
@@ -332,10 +331,8 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
         }
         return drawableState;
     }
-
     @Override
     public void setShortcut(boolean showShortcut, char shortcutKey) {}
-
     @Override
     public void setIcon(@Nullable Drawable iconDrawable) {
         if (iconDrawable == originalIconDrawable) {
