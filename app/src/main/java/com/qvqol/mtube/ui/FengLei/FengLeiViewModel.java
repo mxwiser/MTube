@@ -1,4 +1,4 @@
-package tv.mtube.ui.FengLei;
+package com.qvqol.mtube.ui.FengLei;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

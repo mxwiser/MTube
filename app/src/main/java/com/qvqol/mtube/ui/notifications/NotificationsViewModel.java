@@ -1,4 +1,4 @@
-package tv.mtube.ui.notifications;
+package com.qvqol.mtube.ui.notifications;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

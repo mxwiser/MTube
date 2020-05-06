@@ -1,4 +1,4 @@
-package tv.mtube.ui.mynav;
+package com.qvqol.mtube.ui.mynav;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 

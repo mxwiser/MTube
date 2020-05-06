@@ -1,4 +1,4 @@
-package tv.mtube.ui.home;
+package com.qvqol.mtube.ui.home;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import tv.mtube.R;
+import com.qvqol.mtube.R;
 
 public class HomeFragment extends Fragment {
 

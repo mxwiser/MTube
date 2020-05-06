@@ -1,4 +1,4 @@
-package tv.mtube.ui.dashboard;
+package com.qvqol.mtube.ui.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

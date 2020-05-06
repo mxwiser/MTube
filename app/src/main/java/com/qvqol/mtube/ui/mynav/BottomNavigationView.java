@@ -1,4 +1,4 @@
-package tv.mtube.ui.mynav;
+package com.qvqol.mtube.ui.mynav;
 
 /*
  * Copyright (C) 2016 The Android Open Source Project

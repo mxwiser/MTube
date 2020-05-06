@@ -1,4 +1,4 @@
-package tv.mtube.ui.dashboard;
+package com.qvqol.mtube.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

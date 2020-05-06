@@ -1,4 +1,4 @@
-package tv.mtube.ui.MyUser;
+package com.qvqol.mtube.ui.MyUser;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import tv.mtube.R;
+import com.qvqol.mtube.R;
 
 public class MyUserFragment extends Fragment {
 
