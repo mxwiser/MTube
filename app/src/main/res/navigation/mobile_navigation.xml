@@ -6,32 +6,32 @@
     app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.qvqol.mtube.ui.home.HomeFragment"
+        android:id="@+id/navigation_first"
+        android:name="com.qvqol.mtube.ui.FirstItem.FirstFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_first" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.qvqol.mtube.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_second"
+        android:name="com.qvqol.mtube.ui.FirstItem.FirstFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_second" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.qvqol.mtube.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_third"
+        android:name="com.qvqol.mtube.ui.notifications.ThirdFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_third" />
     <fragment
 
-        android:id="@+id/navigation_fl"
-        android:name="com.qvqol.mtube.ui.FengLei.FengLeiFragment"
+        android:id="@+id/navigation_fourth"
+        android:name="com.qvqol.mtube.ui.FengLei.FourthFragment"
         android:label="分类"
-        tools:layout="@layout/fragment_fl" />
+        tools:layout="@layout/fragment_fourth" />
     <fragment
-        android:id="@+id/navigation_my"
-        android:name="com.qvqol.mtube.ui.MyUser.MyUserFragment"
+        android:id="@+id/navigation_fifth"
+        android:name="com.qvqol.mtube.ui.MyUser.FifthFragment"
         android:label="我的"
-        tools:layout="@layout/fragment_my" />
+        tools:layout="@layout/fragment_fifth" />
 
 </navigation>

@@ -21,7 +21,7 @@ public class FengLeiFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         flViewModel = ViewModelProviders.of(this).get(FengLeiViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_fl, container, false);
+        View root = inflater.inflate(R.layout.fragment_fourth, container, false);
         final TextView textView = root.findViewById(R.id.text_fl);
         flViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
