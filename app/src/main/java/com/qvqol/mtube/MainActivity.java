@@ -21,20 +21,17 @@ public class MainActivity extends AppCompatActivity {
   private  BottomNavigationItemView firstitem,seconditem,thirditem,fourthitem,fifthitem;
   Badge firstbagde,secondbadge,thirdbadge,fourthbadge,fifthbadge;
   private boolean backdesktop=false;
-  
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+         setContentView(R.layout.activity_main);
          this.getSupportActionBar().hide();
          navView = findViewById(R.id.nav_view);
          navView.setItemIconTintList(null);
          navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-         //closeAnimation(navView);
          backItem=navView.getMenu().findItem(R.id.navigation_first);
          thisItem=navView.getMenu().findItem(R.id.navigation_first);
-         //initView();
+         initView();
     }
 
     private void initView(){
@@ -53,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         thirdbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
         fourthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
         fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-
     }
 
     @Override
@@ -70,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     };
-
-
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (!backdesktop){
@@ -88,13 +82,6 @@ public class MainActivity extends AppCompatActivity {
             backItem=thisItem;
         }
         thisItem=item;
-
-
-
-
-
-
-
         resetToDefaultIcon();//重置到默认不选中图片
         switch (item.getItemId()) {
             case R.id.navigation_first:
@@ -147,11 +134,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return builder;
     }
-
-
-
-
-
-
-
 }

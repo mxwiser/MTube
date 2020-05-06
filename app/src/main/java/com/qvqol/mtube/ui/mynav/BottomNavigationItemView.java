@@ -26,6 +26,7 @@ import androidx.appcompat.view.menu.MenuView;
 
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -398,9 +399,13 @@ public class BottomNavigationItemView extends FrameLayout implements MenuView.It
     }
 
     private void calculateTextScaleFactors(float smallLabelSize, float largeLabelSize) {
-        shiftAmount = smallLabelSize - largeLabelSize;
-        scaleUpFactor = 1f * largeLabelSize / smallLabelSize;
-        scaleDownFactor = 1f * smallLabelSize / largeLabelSize;
+        //shiftAmount = smallLabelSize - largeLabelSize;
+        //scaleUpFactor = 1f * largeLabelSize / smallLabelSize;
+        //scaleDownFactor = 1f * smallLabelSize / largeLabelSize;
+        shiftAmount=0F;
+        scaleDownFactor=1F;
+        scaleUpFactor=1F;
+        largeLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX,smallLabel.getTextSize());
     }
 
     public void setItemBackground(int background) {
