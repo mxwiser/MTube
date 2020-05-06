@@ -2,25 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_first"
         android:icon="@drawable/src_images_tabiconsactive_av"
         android:title="热门" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_second"
         android:icon="@drawable/src_images_tabicons_video"
         android:title="视频" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_third"
         android:icon="@drawable/src_images_tabicons_category"
         android:title="@string/title_notifications" />
     <item
-        android:id="@+id/navigation_fl"
+        android:id="@+id/navigation_fourth"
         android:icon="@drawable/src_images_tabicons_like"
         android:title="收藏" />
     <item
-        android:id="@+id/navigation_my"
+        android:id="@+id/navigation_fifth"
         android:icon="@drawable/src_images_tabicons_my"
         android:title="我的" />
 

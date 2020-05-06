@@ -7,7 +7,7 @@
     android:orientation="vertical"
 
 
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.SecondItem.SecondFragment">
 
     <ListView
         android:id="@+id/listhome"
