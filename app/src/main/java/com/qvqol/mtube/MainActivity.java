@@ -1,24 +1,19 @@
 package com.qvqol.mtube;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
-import android.widget.TextView;
 import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
-import com.qvqol.mtube.ui.mynav.BottomNavigationMenuView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.ui.AppBarConfiguration;
-import java.lang.reflect.Field;
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
   private   AppBarConfiguration appBarConfiguration;
