@@ -1,9 +1,6 @@
 package tv.av6;
 
 import android.annotation.SuppressLint;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -12,24 +9,16 @@ import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
-import com.google.android.material.bottomnavigation.BottomNavigationMenu;
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
@@ -44,12 +33,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
          this.getSupportActionBar().hide();
          navView = findViewById(R.id.nav_view);
+
          navView.setItemIconTintList(null);
          navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
          closeAnimation(navView);
+
          backItem=   navView.getMenu().findItem(R.id.navigation_home);
          thisItem= navView.getMenu().findItem(R.id.navigation_home);
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        View v=findViewById(R.id.nav_view);
+        v.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(getApplication(),"123",Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
+
+    }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -74,11 +81,20 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
     private void switchNav(MenuItem item){
         if (thisItem!=item){
             backItem=thisItem;
         }
         thisItem=item;
+
+
+
+
+
+
+
         resetToDefaultIcon();//重置到默认不选中图片
         switch (item.getItemId()) {
             case R.id.navigation_home:
@@ -106,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
     private void resetToDefaultIcon() {
         MenuItem home =  navView.getMenu().findItem(R.id.navigation_home);
         home.setIcon(R.drawable.src_images_tabicons_av);
@@ -136,12 +154,13 @@ public class MainActivity extends AppCompatActivity {
     }
     @SuppressLint("RestrictedApi")
     public void closeAnimation(BottomNavigationView view) {
-
         BottomNavigationMenuView mMenuView = (BottomNavigationMenuView) view.getChildAt(0);
         for (int i = 0; i < mMenuView.getChildCount(); i++) {
             BottomNavigationItemView button = (BottomNavigationItemView) mMenuView.getChildAt(i);
+
             TextView mLargeLabel = getField(button.getClass(), button, "largeLabel");
             TextView mSmallLabel = getField(button.getClass(), button, "smallLabel");
+
             float mSmallLabelSize = mSmallLabel.getTextSize();
             setField(button.getClass(), button, "shiftAmount", 0F);
             setField(button.getClass(), button, "scaleUpFactor", 1F);
@@ -150,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
         }
         mMenuView.updateMenuView();
     }
-
     private <T> T getField(Class targetClass, Object instance, String fieldName) {
         try {
             Field field = targetClass.getDeclaredField(fieldName);
@@ -175,4 +193,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
+
+
 }
