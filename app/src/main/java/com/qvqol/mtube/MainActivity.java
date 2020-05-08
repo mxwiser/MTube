@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
@@ -130,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
         my.setIcon(R.drawable.src_images_tabicons_my);
         my.setTitle(addColor("我的",getResources().getColor(R.color.black)));
     }
+
+
+
     private SpannableStringBuilder addColor(CharSequence text, int color) {
         SpannableStringBuilder builder = new SpannableStringBuilder(text);
         if (color != 0) {
@@ -137,5 +141,36 @@ public class MainActivity extends AppCompatActivity {
                     Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         return builder;
+    }
+
+    private Fragment mContent;
+    private void setDefaultFragment(Fragment fm) {
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction mFragmentTrans = fragmentManager.beginTransaction();
+        mFragmentTrans.add(R.id.nav_host_fragment, fm).commit();
+        mContent = fm;
+    }
+    /**
+     * 修改显示的内容 不会重新加载 *
+     */
+    public void switchContent(Fragment to) {
+        if (mContent != to) {
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            if (!to.isAdded()) { // 先判断是否被add过
+                transaction.hide(mContent).add(R.id.nav_host_fragment, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
+            } else {
+                transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
+            }
+            mContent = to;
+        }
+    }
+    /**
+     * 修改显示的内容 但会重新加载 *
+     */
+    public void switchContent2(Fragment to){
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.nav_host_fragment,to);
+        //transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
