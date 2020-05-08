@@ -16,11 +16,16 @@ import com.qvqol.mtube.R;
 public class SecondFragment extends Fragment {
 
 
+
+     public SecondFragment(){
+
+
+     }
     private ListView listView;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_second, container, false);
-        root.setBackgroundColor(Color.WHITE);
+        root.setBackgroundColor(Color.YELLOW);
         return root;
     }
 }

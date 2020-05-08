@@ -11,6 +11,7 @@ import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
 
 import com.qvqol.mtube.ui.FirstItem.FirstFragment;
+import com.qvqol.mtube.ui.SecondItem.SecondFragment;
 import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
   private   MenuItem  thisItem;
   private  BottomNavigationItemView firstitem,seconditem,thirditem,fourthitem,fifthitem;
   private FragmentManager fragmentManager;
-  private Fragment firstFragment;
+  private Fragment firstFragment,secondFragment;
   Badge firstbagde,secondbadge,thirdbadge,fourthbadge,fifthbadge;
   private boolean backdesktop=false;
     @Override
@@ -58,12 +59,9 @@ public class MainActivity extends AppCompatActivity {
         fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
         //init fragment
         firstFragment=new FirstFragment();
+        secondFragment=new SecondFragment();
         setDefaultFragment(firstFragment);
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -147,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Fragment mContent;
+    //只调用一次设置默认fragment
     private void setDefaultFragment(Fragment fm) {
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction mFragmentTrans = fragmentManager.beginTransaction();
@@ -162,7 +161,10 @@ public class MainActivity extends AppCompatActivity {
             if (!to.isAdded()) { // 先判断是否被add过
                 transaction.hide(mContent).add(R.id.nav_host_fragment, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
             } else {
-                transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
+                //transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
+                transaction.hide(mContent);
+                transaction.show(to);
+                transaction.commit();
             }
             mContent = to;
         }
