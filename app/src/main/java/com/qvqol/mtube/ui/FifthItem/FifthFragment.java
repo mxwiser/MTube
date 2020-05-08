@@ -22,7 +22,7 @@ public class FifthFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_fifth, container, false);
-        final TextView textView = root.findViewById(R.id.text_my);
+        final TextView textView = root.findViewById(R.id.text_first);
     
         return root;
     }
