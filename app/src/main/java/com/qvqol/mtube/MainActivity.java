@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
          thisItem=navView.getMenu().findItem(R.id.navigation_first);
          initView();
     }
-
     private void initView(){
         firstitem=navView.findViewById(R.id.navigation_first);
         seconditem=navView.findViewById(R.id.navigation_second);
