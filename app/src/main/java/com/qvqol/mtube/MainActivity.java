@@ -95,10 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 //在这里替换图标
                 item.setIcon(R.drawable.src_images_tabiconsactive_av);
                 item.setTitle(addColor("热门",getResources().getColor(R.color.feng)));
+                switchContent(firstFragment);
                 break;
             case R.id.navigation_second:
                 item.setIcon(R.drawable.src_images_tabiconsactive_video);
                 item.setTitle(addColor("视频",getResources().getColor(R.color.feng)));
+                switchContent(secondFragment);
                 break;
             case R.id.navigation_third:
                 item.setIcon(R.drawable.src_images_tabiconsactive_category);
