@@ -21,10 +21,7 @@ public class SecondFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_second, container, false);
-
         root.setBackgroundColor(Color.WHITE);
-
-
         return root;
     }
 }
