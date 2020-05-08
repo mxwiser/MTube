@@ -115,7 +115,6 @@ public class MainActivity extends AppCompatActivity {
                 item.setIcon(R.drawable.src_images_tabiconsactive_my);
                 item.setTitle(addColor("我的",getResources().getColor(R.color.feng)));
                 break;
-
         }
 
     }
