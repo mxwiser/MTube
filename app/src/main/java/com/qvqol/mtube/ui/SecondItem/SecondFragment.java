@@ -23,7 +23,8 @@ public class SecondFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_second, container, false);
 
         root.setBackgroundColor(Color.WHITE);
-      
+
+
         return root;
     }
 }
