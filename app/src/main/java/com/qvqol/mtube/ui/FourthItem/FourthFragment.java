@@ -22,8 +22,7 @@ public class FourthFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_fourth, container, false);
-        final TextView textView = root.findViewById(R.id.text_fl);
-   
+        final TextView textView = root.findViewById(R.id.text_fl)
         return root;
     }
 }
