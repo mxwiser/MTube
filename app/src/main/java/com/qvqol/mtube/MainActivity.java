@@ -13,12 +13,16 @@ import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 public class MainActivity extends AppCompatActivity {
   private   BottomNavigationView navView;
   private   MenuItem  backItem;
   private   MenuItem  thisItem;
   private  BottomNavigationItemView firstitem,seconditem,thirditem,fourthitem,fifthitem;
+  private FragmentManager fragmentManager;
+  private Fragment firstFragment;
   Badge firstbagde,secondbadge,thirdbadge,fourthbadge,fifthbadge;
   private boolean backdesktop=false;
     @Override
