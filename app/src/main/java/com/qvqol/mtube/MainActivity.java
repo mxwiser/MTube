@@ -9,6 +9,8 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
+
+import com.qvqol.mtube.ui.FirstItem.FirstFragment;
 import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
@@ -55,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         thirdbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
         fourthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
         fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+        //init fragment
+        firstFragment=new FirstFragment();
+        setDefaultFragment(firstFragment);
     }
 
     @Override
