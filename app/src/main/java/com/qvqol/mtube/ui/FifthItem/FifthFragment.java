@@ -1,5 +1,6 @@
 package com.qvqol.mtube.ui.FifthItem;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,8 +23,8 @@ public class FifthFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_fifth, container, false);
+        root.setBackgroundColor(Color.WHITE);
         final TextView textView = root.findViewById(R.id.text_first);
-    
         return root;
     }
 }

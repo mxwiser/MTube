@@ -22,11 +22,10 @@ public class ThirdFragment extends Fragment {
 
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_third, container, false);
-        root.setBackgroundColor(Color.BLUE);
+        root.setBackgroundColor(Color.WHITE);
         final TextView textView = root.findViewById(R.id.text_notifications);
         textView.setText("3");
         return root;

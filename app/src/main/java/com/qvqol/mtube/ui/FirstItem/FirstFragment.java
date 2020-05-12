@@ -1,5 +1,6 @@
 package com.qvqol.mtube.ui.FirstItem;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class FirstFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_first, container, false);
+        root.setBackgroundColor(Color.WHITE);
         final TextView textView = root.findViewById(R.id.text_first);
         textView.setText("1212");
         return root;

@@ -1,5 +1,6 @@
 package com.qvqol.mtube.ui.FourthItem;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,9 @@ public class FourthFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_fourth, container, false);
+        root.setBackgroundColor(Color.WHITE);
         final TextView textView = root.findViewById(R.id.text_fl);
+        textView.setText("12121221212121212");
         return root;
     }
 }
