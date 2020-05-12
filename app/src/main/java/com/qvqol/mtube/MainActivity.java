@@ -1,6 +1,7 @@
 package com.qvqol.mtube;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
@@ -10,8 +11,11 @@ import android.view.MenuItem;
 import q.rorbin.badgeview.Badge;
 import q.rorbin.badgeview.QBadgeView;
 
+import com.qvqol.mtube.ui.FifthItem.FifthFragment;
 import com.qvqol.mtube.ui.FirstItem.FirstFragment;
+import com.qvqol.mtube.ui.FourthItem.FourthFragment;
 import com.qvqol.mtube.ui.SecondItem.SecondFragment;
+import com.qvqol.mtube.ui.ThirdItem.ThirdFragment;
 import com.qvqol.mtube.ui.mynav.BottomNavigationItemView;
 import com.qvqol.mtube.ui.mynav.BottomNavigationView;
 import androidx.annotation.NonNull;
@@ -60,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
         //init fragment
         firstFragment=new FirstFragment();
         secondFragment=new SecondFragment();
-
+        thirdFragment=new ThirdFragment();
+        fourthFragment=new FourthFragment();
+        fifthFragment=new FifthFragment();
         setDefaultFragment(firstFragment);
 
     }
@@ -106,14 +112,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_third:
                 item.setIcon(R.drawable.src_images_tabiconsactive_category);
                 item.setTitle(addColor("分类",getResources().getColor(R.color.feng)));
+                switchContent(thirdFragment);
                 break;
             case  R.id.navigation_fourth:
                 item.setIcon(R.drawable.src_images_tabiconsactive_like);
                 item.setTitle(addColor("收藏",getResources().getColor(R.color.feng)));
+                switchContent(fourthFragment);
                 break;
             case  R.id.navigation_fifth:
                 item.setIcon(R.drawable.src_images_tabiconsactive_my);
                 item.setTitle(addColor("我的",getResources().getColor(R.color.feng)));
+                switchContent(fifthFragment);
                 break;
         }
 
@@ -164,10 +173,9 @@ public class MainActivity extends AppCompatActivity {
             if (!to.isAdded()) { // 先判断是否被add过
                 transaction.hide(mContent).add(R.id.nav_host_fragment, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
             } else {
-                //transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
-                transaction.hide(mContent);
-                transaction.show(to);
-                transaction.commit();
+
+                transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
+
             }
             mContent = to;
         }
@@ -181,4 +189,6 @@ public class MainActivity extends AppCompatActivity {
         //transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 }

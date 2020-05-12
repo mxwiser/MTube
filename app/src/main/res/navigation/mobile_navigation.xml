@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_second"
-        android:name="com.qvqol.mtube.ui.FirstItem.FirstFragment"
+        android:name="com.qvqol.mtube.ui.SecondItem.SecondFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_second" />
 

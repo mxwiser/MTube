@@ -1,5 +1,6 @@
 package com.qvqol.mtube.ui.ThirdItem;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,17 @@ import com.qvqol.mtube.R;
 public class ThirdFragment extends Fragment {
 
 
+    public  ThirdFragment(){
+
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_third, container, false);
-        final TextView textView = root.findViewById(R.id.text_first);
+        root.setBackgroundColor(Color.BLUE);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+        textView.setText("3");
         return root;
     }
 }
