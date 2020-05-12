@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
   private   MenuItem  thisItem;
   private  BottomNavigationItemView firstitem,seconditem,thirditem,fourthitem,fifthitem;
   private FragmentManager fragmentManager;
-  private Fragment firstFragment,secondFragment;
+  private Fragment firstFragment,secondFragment,thirdFragment,fourthFragment,fifthFragment;
   Badge firstbagde,secondbadge,thirdbadge,fourthbadge,fifthbadge;
   private boolean backdesktop=false;
     @Override
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //init fragment
         firstFragment=new FirstFragment();
         secondFragment=new SecondFragment();
+
         setDefaultFragment(firstFragment);
 
     }
