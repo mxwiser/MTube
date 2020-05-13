@@ -173,9 +173,7 @@ public class MainActivity extends AppCompatActivity {
             if (!to.isAdded()) { // 先判断是否被add过
                 transaction.hide(mContent).add(R.id.nav_host_fragment, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
             } else {
-
                 transaction.hide(mContent).show(to).commit(); // 隐藏当前的fragment，显示下一个
-
             }
             mContent = to;
         }
