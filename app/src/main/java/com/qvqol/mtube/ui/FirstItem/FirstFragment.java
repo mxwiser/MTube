@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,9 +28,17 @@ public class FirstFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_first, container, false);
         root.setBackgroundColor(Color.WHITE);
-        SwipeRefreshLayout srl=root.findViewById(R.id.swip);
+        final SwipeRefreshLayout srl=root.findViewById(R.id.swip);
         srl.setColorSchemeResources(R.color.feng);
         srl.setRefreshing(true);
+        srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(getContext(),"hello",Toast.LENGTH_LONG).show();
+                srl.setRefreshing(false);
+            }
+        });
+        
         return root;
     }
 }

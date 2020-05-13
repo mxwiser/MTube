@@ -41,17 +41,13 @@ import com.google.android.material.badge.BadgeUtils;
 @RestrictTo(LIBRARY_GROUP)
 public class BottomNavigationItemView extends FrameLayout implements MenuView.ItemView {
     public static final int INVALID_ITEM_POSITION = -1;
-
     private static final int[] CHECKED_STATE_SET = {android.R.attr.state_checked};
-
     private final int defaultMargin;
     private float shiftAmount;
     private float scaleUpFactor;
     private float scaleDownFactor;
-
     private int labelVisibilityMode;
     private boolean isShifting;
-
     private ImageView icon;
     private final TextView smallLabel;
     private final TextView largeLabel;
