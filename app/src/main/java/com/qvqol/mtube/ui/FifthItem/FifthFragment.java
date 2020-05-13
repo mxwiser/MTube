@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.qvqol.mtube.R;
 
 public class FifthFragment extends Fragment {
@@ -24,7 +24,7 @@ public class FifthFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_fifth, container, false);
         root.setBackgroundColor(Color.WHITE);
-        final TextView textView = root.findViewById(R.id.text_first);
+
         return root;
     }
 }
