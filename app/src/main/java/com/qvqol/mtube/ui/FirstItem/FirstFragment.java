@@ -23,22 +23,27 @@ public class FirstFragment extends Fragment {
     public FirstFragment(){
 
     }
+    private   SwipeRefreshLayout srl;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_first, container, false);
         root.setBackgroundColor(Color.WHITE);
-        final SwipeRefreshLayout srl=root.findViewById(R.id.swip);
+        srl=root.findViewById(R.id.swip);
         srl.setColorSchemeResources(R.color.feng);
         srl.setRefreshing(true);
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(getContext(),"hello",Toast.LENGTH_LONG).show();
-                srl.setRefreshing(false);
+             reView();
             }
         });
+        reView();
         
         return root;
+    }
+    public  void  reView(){
+        Toast.makeText(getContext(),"hello",Toast.LENGTH_LONG).show();
+        srl.setRefreshing(false);
     }
 }
