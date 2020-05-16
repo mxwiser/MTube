@@ -24,7 +24,6 @@ public class FourthFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_fourth, container, false);
         root.setBackgroundColor(Color.WHITE);
         final TextView textView = root.findViewById(R.id.text_fl);
-        textView.setText("12121221212121212");
         return root;
     }
 }
