@@ -19,12 +19,9 @@ public class FifthFragment extends Fragment {
 
 
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_fifth, container, false);
         root.setBackgroundColor(Color.WHITE);
-
         return root;
     }
 }
