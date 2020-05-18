@@ -18,6 +18,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         list=new ArrayList<>();
         list.add("a");
         list.add("b");
+
     }
     @NonNull
     @Override
@@ -37,6 +38,9 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-
+        if (position==list.size()){
+            return TYPE_FOOTER;
+        }
+        return TYPE_CONTENT;
     }
 }
