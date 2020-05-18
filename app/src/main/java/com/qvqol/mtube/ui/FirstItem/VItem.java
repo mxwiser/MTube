@@ -1,6 +1,7 @@
 package com.qvqol.mtube.ui.FirstItem;
 
-import android.service.chooser.ChooserTarget;
+import android.app.Notification;
+
 import android.widget.ImageView;
 
 public class VItem {
@@ -12,4 +13,5 @@ public class VItem {
     public String hot="";
     public String duration="";
     public ImageView imageView;
+    public String message="";
 }
