@@ -3,7 +3,7 @@ package com.qvqol.mtube.ui.FirstItem;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-public abstract class OnLoadMoreListener extends RecyclerView.OnScrollListener {
+public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
     private int countItem;
     private int lastItem;
     private boolean isScrolled = false;//是否可以滑动
