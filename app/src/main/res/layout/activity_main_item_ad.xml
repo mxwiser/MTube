@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="1dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:focusable="true"
+    android:id="@+id/card"
+    android:layout_margin="7dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <com.qvqol.mtube.ui.FirstItem.MyLinearImageAd
+            android:id="@+id/limage"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/simple"
+
+            android:layout_height="match_parent">
+        </com.qvqol.mtube.ui.FirstItem.MyLinearImageAd>
+
+        <TextView
+            android:id="@+id/adtextItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|left"
+            android:minHeight="35dp"
+            android:text=" 广告位招商啦"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
