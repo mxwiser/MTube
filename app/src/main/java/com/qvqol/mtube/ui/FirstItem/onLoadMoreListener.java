@@ -3,14 +3,16 @@ package com.qvqol.mtube.ui.FirstItem;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
+public abstract class OnLoadMoreListener extends RecyclerView.OnScrollListener {
     private int countItem;
     private int lastItem;
-    private boolean isScolled = false;//是否可以滑动
+    private boolean isScrolled = false;//是否可以滑动
+    private boolean isAllScreen = false;//是否充满全屏
     private RecyclerView.LayoutManager layoutManager;
 
     /**
-     * 加载回调方法
+     * 加载接口
+     *
      * @param countItem 总数量
      * @param lastItem  最后显示的position
      */
@@ -18,8 +20,7 @@ public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
 
     @Override
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-     /* 测试这三个参数的作用
-        if (newState==SCROLL_STATE_IDLE){
+/*        if (newState==SCROLL_STATE_IDLE){
             Log.d("test","SCROLL_STATE_IDLE,空闲");
         }
         else if (newState==SCROLL_STATE_DRAGGING){
@@ -32,10 +33,11 @@ public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
             Log.d("test","其它");
         }*/
         //拖拽或者惯性滑动时isScolled设置为true
-        if (newState ==RecyclerView.SCROLL_STATE_DRAGGING  || newState ==RecyclerView.SCROLL_STATE_SETTLING) {
-            isScolled = true;
+        if (newState ==RecyclerView. SCROLL_STATE_DRAGGING || newState == RecyclerView.SCROLL_STATE_SETTLING) {
+            isScrolled = true;
+            isAllScreen =true;
         } else {
-            isScolled = false;
+            isScrolled = false;
         }
 
     }
@@ -47,8 +49,12 @@ public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
             countItem = layoutManager.getItemCount();
             lastItem = ((LinearLayoutManager) layoutManager).findLastCompletelyVisibleItemPosition();
         }
-        if (isScolled && countItem != lastItem && lastItem == countItem - 1) {
+        if (isScrolled && countItem != lastItem && lastItem == countItem - 1) {
             onLoading(countItem, lastItem);
         }
+    }
+
+    public boolean isAllScreen(){
+        return isAllScreen;
     }
 }
