@@ -10,7 +10,7 @@ import com.qvqol.mtube.R;
 
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
-    private TextView textView;
+    public TextView textView;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         textView=itemView.findViewById(R.id.textItem);

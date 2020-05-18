@@ -26,18 +26,28 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     }
     @NonNull
+    //创建布局
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType==TYPE_FOOTER){
             View view= LayoutInflater.from(context).inflate(R.layout.activity_main_foot,parent,false);
-
+            return  new FootViewHolder(view);
+        }else {
+            View view=LayoutInflater.from(context).inflate(R.layout.activity_main_item,parent,false);
+            return new MyViewHolder(view);
         }
-        return null;
-    }
 
+    }
+    //绑定数据
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (getItemViewType(position)==TYPE_FOOTER){
 
+        }
+        else{
+            MyViewHolder viewHolder= (MyViewHolder) holder;
+            viewHolder.textView.setText("第" + position + "行");
+        }
     }
 
     @Override
