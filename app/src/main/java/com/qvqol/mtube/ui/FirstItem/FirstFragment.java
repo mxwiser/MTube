@@ -74,7 +74,7 @@ public class FirstFragment extends Fragment {
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getData("reset");
+                getData("refresh");
             }
         });
 

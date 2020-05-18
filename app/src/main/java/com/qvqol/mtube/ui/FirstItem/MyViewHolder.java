@@ -1,9 +1,11 @@
 package com.qvqol.mtube.ui.FirstItem;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.qvqol.mtube.R;
@@ -11,8 +13,12 @@ import com.qvqol.mtube.R;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView textView;
+    public CardView cardView;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         textView=itemView.findViewById(R.id.textItem);
+        cardView=itemView.findViewById(R.id.card);
+        ViewGroup.LayoutParams layoutParams= cardView.getLayoutParams();
+        layoutParams.height=160;
     }
 }
