@@ -1,6 +1,7 @@
 package com.qvqol.mtube.ui.FirstItem;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         else{
             MyViewHolder viewHolder= (MyViewHolder) holder;
             viewHolder.textView.setText(" 【MTV】 落落历险记第"+position+"集");
+
         }
     }
 

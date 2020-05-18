@@ -15,19 +15,21 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <com.qvqol.mtube.ui.FirstItem.MyLinearImage
+            android:id="@+id/limage"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:layout_height="200dp">
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent">
+        </com.qvqol.mtube.ui.FirstItem.MyLinearImage>
 
-        </LinearLayout>
         <TextView
             android:id="@+id/textItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="45dp"
+            android:gravity="center|left"
+            android:minHeight="35dp"
             android:text=" 【MTV】 落落历险记"
-            android:textColor="@color/black"
-           />
+            android:textColor="@color/black" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
