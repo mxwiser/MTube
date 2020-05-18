@@ -17,8 +17,8 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         textView=itemView.findViewById(R.id.textItem);
-        cardView=itemView.findViewById(R.id.card);
-        ViewGroup.LayoutParams layoutParams= cardView.getLayoutParams();
-        layoutParams.height=160;
+        //cardView=itemView.findViewById(R.id.card);
+        //ViewGroup.LayoutParams layoutParams= cardView.getLayoutParams();
+        //layoutParams.height=160;
     }
 }
