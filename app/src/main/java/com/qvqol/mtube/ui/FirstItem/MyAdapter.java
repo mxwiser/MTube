@@ -21,8 +21,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public  MyAdapter(Context context){
         this.context=context;
         list=new ArrayList<>();
-        list.add("a");
-        list.add("b");
 
     }
     @NonNull
@@ -61,5 +59,11 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             return TYPE_FOOTER;
         }
         return TYPE_CONTENT;
+    }
+    public void addDate(String s){
+        list.add(s);
+    };
+    public void ClearList(){
+        list.clear();
     }
 }

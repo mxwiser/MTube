@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         fourthFragment=new FourthFragment();
         fifthFragment=new FifthFragment();
         setDefaultFragment(firstFragment);
+        firstbagde.setGravityOffset(10,10,true);
+        firstbagde.setBadgeText("");
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
