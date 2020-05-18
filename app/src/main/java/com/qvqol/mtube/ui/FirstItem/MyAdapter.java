@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         else{
             MyViewHolder viewHolder= (MyViewHolder) holder;
-            viewHolder.textView.setText(" 【MTV】 落落历险记第"+position+"集");
+            viewHolder.textView.setText(" 【MTV】 小猪佩奇第"+position+"集");
 
         }
     }

@@ -19,7 +19,8 @@
             android:id="@+id/limage"
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/simple"
+
             android:layout_height="match_parent">
         </com.qvqol.mtube.ui.FirstItem.MyLinearImage>
 

@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         fifthFragment=new FifthFragment();
         setDefaultFragment(firstFragment);
         firstbagde.setGravityOffset(10,10,true);
+        firstbagde.setShowShadow(false);
         firstbagde.setBadgeText("");
 
     }
