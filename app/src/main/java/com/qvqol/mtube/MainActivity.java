@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView(){
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+
                 navView = findViewById(R.id.nav_view);
                 firstitem=navView.findViewById(R.id.navigation_first);
                 seconditem=navView.findViewById(R.id.navigation_second);
@@ -71,18 +69,12 @@ public class MainActivity extends AppCompatActivity {
                 thirdFragment=new ThirdFragment();
                 fourthFragment=new FourthFragment();
                 fifthFragment=new FifthFragment();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        navView.setItemIconTintList(null);
-                        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-                        backItem=navView.getMenu().findItem(R.id.navigation_first);
-                        thisItem=navView.getMenu().findItem(R.id.navigation_first);
-                        setDefaultFragment(firstFragment);
-                    }
-                });
-            }
-        }).start();
+                navView.setItemIconTintList(null);
+                navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+                backItem=navView.getMenu().findItem(R.id.navigation_first);
+                thisItem=navView.getMenu().findItem(R.id.navigation_first);
+                setDefaultFragment(firstFragment);
+
 
 
        //firstbagde.setGravityOffset(10,10,true);
