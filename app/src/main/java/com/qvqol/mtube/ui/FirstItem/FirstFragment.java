@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -68,7 +69,7 @@ public class FirstFragment extends Fragment {
                     public void run() {
                         getData("loadMore");
                     }
-                }, 500);
+                }, 80);
             }
         };
 
@@ -100,18 +101,17 @@ int count;
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Drawable drawable = getResources().getDrawable(R.drawable.simple);
                 if ("reset".equals(type)) {
                     myAdapter.ClearList();
 
-                    @SuppressLint("ResourceType") InputStream is = getResources().openRawResource(R.drawable.simple);
-                    Bitmap mBitmap = BitmapFactory.decodeStream(is);
+
 
                     count = 0;
-                    for (int i = 0; i < 20; i++) {
+                    for (int i = 0; i < 5; i++) {
                         count += 1;
 
-
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, mBitmap);
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
                     }
                 }
                 else if ("refresh".equals(type)) {
@@ -119,12 +119,12 @@ int count;
                     count = 0;
                     for (int i = 0; i < 13; i++) {
                         count += 1;
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0,drawable);
                     }
                 } else {
                     for (int i = 0; i < 3; i++) {
                         count += 1;
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
                     }
                 }
                 handler.post(new Runnable() {

@@ -16,9 +16,11 @@ import com.qvqol.mtube.R;
 public class MyViewHolder extends RecyclerView.ViewHolder {
     public TextView textView;
 
-
+    public MyLinearImage myLinearImage;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         textView=itemView.findViewById(R.id.textItem);
+        myLinearImage=itemView.findViewById(R.id.limage);
+
     }
 }

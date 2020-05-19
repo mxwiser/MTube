@@ -2,6 +2,8 @@ package com.qvqol.mtube.ui.FirstItem;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,8 +49,9 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         else{
             MyViewHolder viewHolder= (MyViewHolder) holder;
-            viewHolder.textView.setText(listItem.get(position).title);
-
+            VItem vItem=listItem.get(position);
+            viewHolder.textView.setText(vItem.title);
+            viewHolder.myLinearImage.setBackground(vItem.img);
         }
     }
 
@@ -64,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         return TYPE_CONTENT;
     }
-    public void addDate(String title, String time, String hot, String duration, String message, int category, Bitmap bitmap){
+    public void addDate(String title, String time, String hot, String duration, String message, int category, Drawable img){
         VItem vItem=new VItem();
         vItem.title=title;
         vItem.time=time;
@@ -72,7 +75,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vItem.duration=duration;
         vItem.message=message;
         vItem.category=category;
-        vItem.bitmap=bitmap;
+        vItem.img=img;
         listItem.add(vItem);
     };
     public void ClearList(){
