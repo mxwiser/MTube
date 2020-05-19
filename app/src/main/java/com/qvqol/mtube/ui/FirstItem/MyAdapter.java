@@ -60,12 +60,18 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     final MyViewHolder viewHolder= (MyViewHolder) holder;
                     final VItem vItem=listItem.get(position);
                      viewHolder.textView.setText(vItem.title);
-                     new ImageTask(new ImageTask.Listener() {
-                         @Override
-                         public void onSuccess(Drawable drawable) {
+                     Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
+                     if (drawable==null){
+                         new ImageTask(new ImageTask.Listener() {
+                             @Override
+                             public void onSuccess(Drawable drawable) {
                                  viewHolder.myLinearImage.setBackground(drawable);
-                         }
-                     }).execute(vItem.imgUrl);
+                             }
+                         }).execute(vItem.imgUrl,"ItemImage"+position);
+                     }else {
+                                viewHolder.myLinearImage.setBackground(drawable);
+                     }
+
 
 
 
