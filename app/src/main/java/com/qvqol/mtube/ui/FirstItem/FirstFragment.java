@@ -108,7 +108,7 @@ int count;
 
 
                     count = 0;
-                    for (int i = 0; i < 5; i++) {
+                    for (int i = 0; i < 10; i++) {
                         count += 1;
 
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
@@ -117,12 +117,12 @@ int count;
                 else if ("refresh".equals(type)) {
                     myAdapter.ClearList();
                     count = 0;
-                    for (int i = 0; i < 13; i++) {
+                    for (int i = 0; i < 10; i++) {
                         count += 1;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0,drawable);
                     }
                 } else {
-                    for (int i = 0; i < 3; i++) {
+                    for (int i = 0; i < 10; i++) {
                         count += 1;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
                     }

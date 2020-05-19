@@ -14,7 +14,7 @@ public class VItem {
     public String time="";
     public String hot="";
     public String duration="";
-    public Drawable img;
+    public String imgUrl="";
     public String message="";
 
 }
