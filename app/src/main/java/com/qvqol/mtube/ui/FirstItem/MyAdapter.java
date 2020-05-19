@@ -32,6 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType==TYPE_FOOTER){
+
             View view= LayoutInflater.from(context).inflate(R.layout.activity_main_foot,parent,false);
             return  new FootViewHolder(view);
         }else {
