@@ -26,7 +26,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public  MyAdapter(Context context){
         this.context=context;
         listItem=new ArrayList<>();
-
     }
     @NonNull
     //创建布局
