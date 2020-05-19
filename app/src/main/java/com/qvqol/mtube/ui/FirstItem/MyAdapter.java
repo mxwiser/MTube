@@ -27,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<VItem> listItem;
     private Context context;
     final ThreadPoolExecutor threadPoolExecutor;
-    Handler handler;
+
 
     public  MyAdapter(Context context){
         this.context=context;
