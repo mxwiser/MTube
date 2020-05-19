@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
-        setTheme(R.style.AppTheme_Launcher);
         setContentView(R.layout.activity_main);
         handler=new Handler();
         initView();
