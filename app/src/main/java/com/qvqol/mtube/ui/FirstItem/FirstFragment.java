@@ -51,8 +51,6 @@ public class FirstFragment extends Fragment {
         root.setBackgroundColor(Color.WHITE);
         srl=root.findViewById(R.id.swip);
         recyclerView=root.findViewById(R.id.recy);
-
-
         initView();
         return root;
     }
@@ -96,48 +94,65 @@ public class FirstFragment extends Fragment {
 
 
 
-    public  void  reView(){
-        Toast.makeText(getContext(),"hello",Toast.LENGTH_LONG).show();
-        srl.setRefreshing(false);
-    }
 int count;
     private void getData(final String type) {
-        if ("reset".equals(type)) {
-           myAdapter.ClearList();
 
-            @SuppressLint("ResourceType") InputStream is = getResources().openRawResource(R.drawable.simple);
-            Bitmap mBitmap = BitmapFactory.decodeStream(is);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if ("reset".equals(type)) {
+                    myAdapter.ClearList();
 
-           count = 0;
-            for (int i = 0; i < 20; i++) {
-                count += 1;
+                    @SuppressLint("ResourceType") InputStream is = getResources().openRawResource(R.drawable.simple);
+                    Bitmap mBitmap = BitmapFactory.decodeStream(is);
+
+                    count = 0;
+                    for (int i = 0; i < 20; i++) {
+                        count += 1;
 
 
-                myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, mBitmap);
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, mBitmap);
+                    }
+                }
+                else if ("refresh".equals(type)) {
+                    myAdapter.ClearList();
+                    count = 0;
+                    for (int i = 0; i < 13; i++) {
+                        count += 1;
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
+                    }
+                } else {
+                    for (int i = 0; i < 3; i++) {
+                        count += 1;
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
+                    }
+                }
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        myAdapter.notifyDataSetChanged();
+                        if (srl.isRefreshing()) {
+                            srl.setRefreshing(false);
+                        }
+                        if ("refresh".equals(type)) {
+                           // Toast.makeText(getContext(), "刷新完毕", Toast.LENGTH_SHORT).show();
+                        } else {
+                            //Toast.makeText(getContext(), "加载完毕", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
             }
-        }
-        else if ("refresh".equals(type)) {
-            myAdapter.ClearList();
-            count = 0;
-            for (int i = 0; i < 13; i++) {
-                count += 1;
-                myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
-            }
-        } else {
-            for (int i = 0; i < 3; i++) {
-                count += 1;
-                myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, BitmapFactory.decodeResource(getResources(),R.drawable.simple));
-            }
-        }
+        }).start();
 
-        myAdapter.notifyDataSetChanged();
-        if (srl.isRefreshing()) {
-            srl.setRefreshing(false);
-        }
-        if ("refresh".equals(type)) {
-            Toast.makeText(getContext(), "刷新完毕", Toast.LENGTH_SHORT).show();
-        } else {
-            //Toast.makeText(getContext(), "加载完毕", Toast.LENGTH_SHORT).show();
-        }
+
+
+
+
+
     }
+
+
+
 }
+
