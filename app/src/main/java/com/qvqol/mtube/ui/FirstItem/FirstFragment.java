@@ -101,7 +101,11 @@ int count;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Drawable drawable = getResources().getDrawable(R.drawable.simple);
+
+
+                String url="https://qvqol.com/img.png";
+
+
                 if ("reset".equals(type)) {
                     myAdapter.ClearList();
 
@@ -111,7 +115,7 @@ int count;
                     for (int i = 0; i < 10; i++) {
                         count += 1;
 
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, url);
                     }
                 }
                 else if ("refresh".equals(type)) {
@@ -119,12 +123,12 @@ int count;
                     count = 0;
                     for (int i = 0; i < 10; i++) {
                         count += 1;
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0,drawable);
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0,url);
                     }
                 } else {
                     for (int i = 0; i < 10; i++) {
                         count += 1;
-                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, drawable);
+                        myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, url);
                     }
                 }
                 handler.post(new Runnable() {

@@ -50,7 +50,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             MyViewHolder viewHolder= (MyViewHolder) holder;
             VItem vItem=listItem.get(position);
             viewHolder.textView.setText(vItem.title);
-            viewHolder.myLinearImage.setBackground(vItem.img);
+
         }
     }
 
@@ -66,7 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         return TYPE_CONTENT;
     }
-    public void addDate(String title, String time, String hot, String duration, String message, int category, Drawable img){
+    public void addDate(String title, String time, String hot, String duration, String message, int category, String img){
         VItem vItem=new VItem();
         vItem.title=title;
         vItem.time=time;
@@ -74,7 +74,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vItem.duration=duration;
         vItem.message=message;
         vItem.category=category;
-        vItem.img=img;
+        vItem.imgUrl=img;
         listItem.add(vItem);
     };
     public void ClearList(){
