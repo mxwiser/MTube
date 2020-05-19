@@ -2,6 +2,7 @@ package com.qvqol.mtube.ui.FirstItem;
 
 import android.app.Notification;
 
+import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 public class VItem {
@@ -12,6 +13,6 @@ public class VItem {
     public String time="";
     public String hot="";
     public String duration="";
-    public ImageView imageView;
+    public Bitmap bitmap;
     public String message="";
 }

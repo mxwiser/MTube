@@ -1,6 +1,7 @@
 package com.qvqol.mtube.ui.FirstItem;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         else{
             MyViewHolder viewHolder= (MyViewHolder) holder;
-            viewHolder.textView.setText(" 【MTV】 小猪佩奇第"+position+"集");
+            viewHolder.textView.setText(listItem.get(position).title);
 
         }
     }
@@ -63,8 +64,16 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         return TYPE_CONTENT;
     }
-    public void addDate(String title, String time, String hot, String duration, String message, int category, ImageView imageView){
-
+    public void addDate(String title, String time, String hot, String duration, String message, int category, Bitmap bitmap){
+        VItem vItem=new VItem();
+        vItem.title=title;
+        vItem.time=time;
+        vItem.hot=hot;
+        vItem.duration=duration;
+        vItem.message=message;
+        vItem.category=category;
+        vItem.bitmap=bitmap;
+        listItem.add(vItem);
 
     };
     public void ClearList(){
