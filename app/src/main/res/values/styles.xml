@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">#f683a2</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowNoTitle">true</item>
-
+        <item name="android:windowBackground">@drawable/lch</item>
     </style>
 
 </resources>
