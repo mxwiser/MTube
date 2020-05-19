@@ -13,6 +13,13 @@ public final class CacheHelper {
 
 
         };
-    }
 
+
+    }
+    public  static  void  clearCache(){
+        sLruCache = new LruCache<String, Drawable>((int) Runtime.getRuntime().maxMemory() / 4) {
+
+
+        };
+    }
 }

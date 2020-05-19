@@ -16,5 +16,6 @@ public class VItem {
     public String duration="";
     public String imgUrl="";
     public String message="";
+    public String adurl="";
 
 }

@@ -81,7 +81,6 @@ public class FirstFragment extends Fragment {
                 getData("refresh");
             }
         });
-
         myAdapter=new MyAdapter(getContext());
         recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -108,9 +107,6 @@ int count;
 
                 if ("reset".equals(type)) {
                     myAdapter.ClearList();
-
-
-
                     count = 0;
                     for (int i = 0; i < 10; i++) {
                         count += 1;
@@ -120,6 +116,7 @@ int count;
                 }
                 else if ("refresh".equals(type)) {
                     myAdapter.ClearList();
+                    CacheHelper.clearCache();
                     count = 0;
                     for (int i = 0; i < 10; i++) {
                         count += 1;
