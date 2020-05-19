@@ -48,6 +48,7 @@ public class ImageTask extends AsyncTask<String,Void, Drawable> {
             // 可以在这里通过文件名来判断，是否本地有此图片
             drawable = Drawable.createFromStream(
                     new URL(imageUrl).openStream(), "image.jpg");
+
         } catch (IOException e) {
             Log.d("test", e.getMessage());
         }
