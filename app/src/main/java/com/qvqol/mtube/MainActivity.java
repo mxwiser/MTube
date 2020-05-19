@@ -1,6 +1,7 @@
 package com.qvqol.mtube;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -32,45 +33,62 @@ public class MainActivity extends AppCompatActivity {
   private FragmentManager fragmentManager;
   private Fragment firstFragment,secondFragment,thirdFragment,fourthFragment,fifthFragment;
   Badge firstbagde,secondbadge,thirdbadge,fourthbadge,fifthbadge;
+  private Handler handler;
   private boolean backdesktop=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_main);
-         this.getSupportActionBar().hide();
-         navView = findViewById(R.id.nav_view);
-         navView.setItemIconTintList(null);
-         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-         backItem=navView.getMenu().findItem(R.id.navigation_first);
-         thisItem=navView.getMenu().findItem(R.id.navigation_first);
-         initView();
+        this.getSupportActionBar().hide();
+        setTheme(R.style.AppTheme_Launcher);
+        setContentView(R.layout.activity_main);
+        handler=new Handler();
+        initView();
     }
+
     private void initView(){
-        firstitem=navView.findViewById(R.id.navigation_first);
-        seconditem=navView.findViewById(R.id.navigation_second);
-        thirditem=navView.findViewById(R.id.navigation_third);
-        fourthitem=navView.findViewById(R.id.navigation_fourth);
-        fifthitem=navView.findViewById(R.id.navigation_fifth);
-        firstbagde=new QBadgeView(this).bindTarget(firstitem);
-        secondbadge=new QBadgeView(this).bindTarget(seconditem);
-        thirdbadge=new QBadgeView(this).bindTarget(thirditem);
-        fourthbadge=new QBadgeView(this).bindTarget(fourthitem);
-        fifthbadge=new QBadgeView(this).bindTarget(fifthitem);
-        fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-        secondbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-        thirdbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-        fourthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-        fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
-        //init fragment
-        firstFragment=new FirstFragment();
-        secondFragment=new SecondFragment();
-        thirdFragment=new ThirdFragment();
-        fourthFragment=new FourthFragment();
-        fifthFragment=new FifthFragment();
-        setDefaultFragment(firstFragment);
-        firstbagde.setGravityOffset(10,10,true);
-        firstbagde.setShowShadow(false);
-        firstbagde.setBadgeText("");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                navView = findViewById(R.id.nav_view);
+                firstitem=navView.findViewById(R.id.navigation_first);
+                seconditem=navView.findViewById(R.id.navigation_second);
+                thirditem=navView.findViewById(R.id.navigation_third);
+                fourthitem=navView.findViewById(R.id.navigation_fourth);
+                fifthitem=navView.findViewById(R.id.navigation_fifth);
+                firstbagde=new QBadgeView(getApplicationContext()).bindTarget(firstitem);
+                secondbadge=new QBadgeView(getApplicationContext()).bindTarget(seconditem);
+                thirdbadge=new QBadgeView(getApplicationContext()).bindTarget(thirditem);
+                fourthbadge=new QBadgeView(getApplicationContext()).bindTarget(fourthitem);
+                fifthbadge=new QBadgeView(getApplicationContext()).bindTarget(fifthitem);
+                fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+                secondbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+                thirdbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+                fourthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+                fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
+                //init fragment
+                firstFragment=new FirstFragment();
+                secondFragment=new SecondFragment();
+                thirdFragment=new ThirdFragment();
+                fourthFragment=new FourthFragment();
+                fifthFragment=new FifthFragment();
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        navView.setItemIconTintList(null);
+                        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+                        backItem=navView.getMenu().findItem(R.id.navigation_first);
+                        thisItem=navView.getMenu().findItem(R.id.navigation_first);
+                        setDefaultFragment(firstFragment);
+                    }
+                });
+            }
+        }).start();
+
+
+       //firstbagde.setGravityOffset(10,10,true);
+       //firstbagde.setShowShadow(false);
+       //firstbagde.setBadgeText("");
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

@@ -126,11 +126,12 @@ int count;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0,url);
                     }
                 } else {
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < 5; i++) {
                         count += 1;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, url);
                     }
                 }
+
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
@@ -139,13 +140,12 @@ int count;
                             srl.setRefreshing(false);
                         }
                         if ("refresh".equals(type)) {
-                           // Toast.makeText(getContext(), "刷新完毕", Toast.LENGTH_SHORT).show();
+
                         } else {
-                            //Toast.makeText(getContext(), "加载完毕", Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
-
             }
         }).start();
 
