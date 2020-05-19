@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<VItem> listItem;
     private Context context;
     final ThreadPoolExecutor threadPoolExecutor;
+    Handler handler;
 
     public  MyAdapter(Context context){
         this.context=context;
@@ -48,15 +50,20 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
     //绑定数据
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         if (getItemViewType(position)==TYPE_FOOTER){
 
         }
         else{
 
-            MyViewHolder viewHolder= (MyViewHolder) holder;
-            VItem vItem=listItem.get(position);
-            viewHolder.textView.setText(vItem.title);
+
+                    final MyViewHolder viewHolder= (MyViewHolder) holder;
+                    final VItem vItem=listItem.get(position);
+                     viewHolder.textView.setText(vItem.title);
+
+
+
+
 
         }
     }
