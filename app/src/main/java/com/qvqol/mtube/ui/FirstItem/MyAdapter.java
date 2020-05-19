@@ -16,15 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.qvqol.mtube.R;
 
 import java.util.ArrayList;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final static int TYPE_CONTENT=0;//正常内容
     private final static int TYPE_FOOTER=1;//下拉刷新
     private ArrayList<VItem> listItem;
     private Context context;
+    final ThreadPoolExecutor threadPoolExecutor;
 
     public  MyAdapter(Context context){
         this.context=context;
+        threadPoolExecutor=new ThreadPoolExecutor(3,5,1, TimeUnit.SECONDS,new LinkedBlockingDeque<Runnable>(100));
         listItem=new ArrayList<>();
     }
     @NonNull
@@ -48,6 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         }
         else{
+
             MyViewHolder viewHolder= (MyViewHolder) holder;
             VItem vItem=listItem.get(position);
             viewHolder.textView.setText(vItem.title);
