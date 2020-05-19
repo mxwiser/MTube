@@ -16,6 +16,7 @@ public class LoadActivity extends AppCompatActivity {
         this.getSupportActionBar().hide();
         setContentView(R.layout.load);
         Handler handler=new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -23,6 +24,6 @@ public class LoadActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        },800);
+        },1000);
     }
 }
