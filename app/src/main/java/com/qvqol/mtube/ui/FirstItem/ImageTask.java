@@ -17,10 +17,7 @@ public class ImageTask extends AsyncTask<String,Void, Drawable> {
 
     @Override
     protected Drawable doInBackground(String... strings) {
-        String url=strings[0];
-
         Drawable drawable = loadImageFromNetwork(strings[0],strings[1]);
-
         return drawable;
     }
 
@@ -40,16 +37,13 @@ public class ImageTask extends AsyncTask<String,Void, Drawable> {
         Drawable drawable = null;
         try {
             // 可以在这里通过文件名来判断，是否本地有此图片
-            drawable = Drawable.createFromStream(new URL(imageUrl).openStream(), "image.jpg");
+            drawable = Drawable.createFromStream(new URL(imageUrl).openStream(),"itemsrc");
             CacheHelper.sLruCache.put(key,drawable);
+            Log.d("存入图片缓存：",key);
         } catch (IOException e) {
             Log.d("test", e.getMessage());
         }
-        if (drawable == null) {
-            Log.d("test", "null drawable");
-        } else {
-            Log.d("test", "not null drawable");
-        }
+
 
         return drawable ;
     }

@@ -62,14 +62,17 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                      viewHolder.textView.setText(vItem.title);
                      Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
                      if (drawable==null){
+                         Log.d("没找到图片缓存","ItemImage"+position);
                          new ImageTask(new ImageTask.Listener() {
                              @Override
                              public void onSuccess(Drawable drawable) {
+                                 Log.d("显示图片缓存","ItemImage"+position);
                                  viewHolder.myLinearImage.setBackground(drawable);
                              }
                          }).execute(vItem.imgUrl,"ItemImage"+position);
                      }else {
-                                viewHolder.myLinearImage.setBackground(drawable);
+                         Log.d("找到并显示图片缓存","ItemImage"+position);
+                         viewHolder.myLinearImage.setBackground(drawable);
                      }
         }
     }

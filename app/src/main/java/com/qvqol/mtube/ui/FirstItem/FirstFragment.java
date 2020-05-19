@@ -25,6 +25,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.qvqol.mtube.R;
@@ -88,6 +89,7 @@ public class FirstFragment extends Fragment {
         recyclerView.setAdapter(myAdapter);
         recyclerView.addOnScrollListener(onLoadMoreListener);
         getData("reset");
+
 
     }
 
