@@ -71,11 +71,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                      }else {
                                 viewHolder.myLinearImage.setBackground(drawable);
                      }
-
-
-
-
-
         }
     }
 
