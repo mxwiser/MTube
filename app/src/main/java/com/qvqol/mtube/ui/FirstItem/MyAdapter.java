@@ -74,7 +74,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vItem.category=category;
         vItem.bitmap=bitmap;
         listItem.add(vItem);
-
     };
     public void ClearList(){
         listItem.clear();
