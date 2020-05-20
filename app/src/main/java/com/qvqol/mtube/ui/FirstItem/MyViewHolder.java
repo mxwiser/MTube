@@ -47,10 +47,6 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 myLinearImage.setBackground(resource);
             }
         });
-
-
-        Glide.with(context).load(url).into(new CustomTarget<Drawable>() {
-        });
     }
 
 
