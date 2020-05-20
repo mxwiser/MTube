@@ -21,7 +21,6 @@
             android:background="@drawable/simple"
             android:layout_height="match_parent">
         </com.qvqol.mtube.ui.FirstItem.MyLinearImageAd>
-
         <TextView
             android:id="@+id/adtextItem"
             android:layout_width="match_parent"
