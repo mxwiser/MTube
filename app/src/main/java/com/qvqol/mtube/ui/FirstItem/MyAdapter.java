@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         else{
 
                     final MyViewHolder viewHolder= (MyViewHolder) holder;
-                    viewHolder.OnBindUI(listItem.get(position),position);
+                    viewHolder.OnBindUI(listItem.get(position),position,context);
 
                      //loadDrawload(viewHolder,position,vItem.imgUrl);
 
