@@ -27,25 +27,20 @@ import com.google.android.material.internal.ParcelableSparseArray;
 public class BottomNavigationPresenter implements MenuPresenter {
     private MenuBuilder menu;
     private BottomNavigationMenuView menuView;
-
     private boolean updateSuspended = false;
     private int id;
-
     public void setBottomNavigationMenuView(BottomNavigationMenuView menuView) {
         this.menuView = menuView;
     }
-
     @Override
     public void initForMenu(Context context, MenuBuilder menu) {
         this.menu = menu;
         menuView.initialize(this.menu);
     }
-
     @Override
     public MenuView getMenuView(ViewGroup root) {
         return menuView;
     }
-
     @Override
     public void updateMenuView(boolean cleared) {
         if (updateSuspended) {
@@ -57,42 +52,33 @@ public class BottomNavigationPresenter implements MenuPresenter {
             menuView.updateMenuView();
         }
     }
-
     @Override
     public void setCallback(Callback cb) {}
-
     @Override
     public boolean onSubMenuSelected(SubMenuBuilder subMenu) {
         return false;
     }
-
     @Override
     public void onCloseMenu(MenuBuilder menu, boolean allMenusAreClosing) {}
-
     @Override
     public boolean flagActionItems() {
         return false;
     }
-
     @Override
     public boolean expandItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
-
     @Override
     public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     @Override
     public int getId() {
         return id;
     }
-
     @NonNull
     @Override
     public Parcelable onSaveInstanceState() {
@@ -102,7 +88,6 @@ public class BottomNavigationPresenter implements MenuPresenter {
                 BadgeUtils.createParcelableBadgeStates(menuView.getBadgeDrawables());
         return savedState;
     }
-
     @Override
     public void onRestoreInstanceState(Parcelable state) {
         if (state instanceof SavedState) {
@@ -113,11 +98,9 @@ public class BottomNavigationPresenter implements MenuPresenter {
             menuView.setBadgeDrawables(badgeDrawables);
         }
     }
-
     public void setUpdateSuspended(boolean updateSuspended) {
         this.updateSuspended = updateSuspended;
     }
-
     static class SavedState implements Parcelable {
         int selectedItemId;
         @Nullable ParcelableSparseArray badgeSavedStates;
