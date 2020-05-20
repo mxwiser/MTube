@@ -103,11 +103,7 @@ int count;
         new Thread(new Runnable() {
             @Override
             public void run() {
-
-
-                String url="https://qvqol.com/img.png";
-
-
+                String url="https://qvqol.com/xzpq.png";
                 if ("reset".equals(type)) {
                     myAdapter.ClearList();
                     count = 0;
