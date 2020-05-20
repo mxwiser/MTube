@@ -1,13 +1,18 @@
 package com.qvqol.mtube;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qvqol.mtube.ui.FirstItem.ImageTask;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+
+import java.util.concurrent.ExecutionException;
 
 public class LoadActivity extends AppCompatActivity {
     Handler handler;
@@ -18,8 +23,10 @@ public class LoadActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
+        loadLCHImage();
         setContentView(R.layout.load);
-      handler=new Handler();
+
+        handler=new Handler();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -28,9 +35,13 @@ public class LoadActivity extends AppCompatActivity {
             }
         }).start();
     }
-
+    //图片预加载
     private  void loadMainItemImage(){
-
+        Glide.with(LoadActivity.this).load("https://qvqol.com/xzpq.png").preload();
+    }
+    //启动图预加载
+    private  void loadLCHImage(){
+     Glide.with(getApplicationContext()).asGif().load("").into(new ImageView(getApplicationContext()));
     }
     private void  startMain(){
         handler.postDelayed(new Runnable() {

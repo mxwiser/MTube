@@ -53,11 +53,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
                     final MyViewHolder viewHolder= (MyViewHolder) holder;
                     viewHolder.OnBindUI(listItem.get(position),position,context);
-
                      //loadDrawload(viewHolder,position,vItem.imgUrl);
-
-
-
         }
     }
 
