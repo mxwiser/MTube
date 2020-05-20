@@ -83,11 +83,12 @@ public class FirstFragment extends Fragment {
             }
         });
         myAdapter=new MyAdapter(getContext());
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setOverScrollMode(View.OVER_SCROLL_NEVER);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(myAdapter);
         recyclerView.addOnScrollListener(onLoadMoreListener);
+
         getData("reset");
 
 

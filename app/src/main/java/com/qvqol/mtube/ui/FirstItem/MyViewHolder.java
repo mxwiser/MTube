@@ -23,4 +23,5 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         myLinearImage=itemView.findViewById(R.id.limage);
 
     }
+
 }

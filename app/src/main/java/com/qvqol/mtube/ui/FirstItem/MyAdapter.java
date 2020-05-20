@@ -9,13 +9,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.qvqol.mtube.R;
-
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -27,7 +23,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<VItem> listItem;
     private Context context;
     final ThreadPoolExecutor threadPoolExecutor;
-
 
     public  MyAdapter(Context context){
         this.context=context;
@@ -56,24 +51,32 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         else{
 
-
                     final MyViewHolder viewHolder= (MyViewHolder) holder;
-                    final VItem vItem=listItem.get(position);
+
+                     final VItem vItem=listItem.get(position);
                      viewHolder.textView.setText(vItem.title);
-                     Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
-                     if (drawable==null){
-                         Log.d("没找到图片缓存","ItemImage"+position);
-                         new ImageTask(new ImageTask.Listener() {
-                             @Override
-                             public void onSuccess(Drawable drawable) {
-                                 Log.d("显示图片缓存","ItemImage"+position);
-                                 viewHolder.myLinearImage.setBackground(drawable);
-                             }
-                         }).execute(vItem.imgUrl,"ItemImage"+position);
-                     }else {
-                         Log.d("找到并显示图片缓存","ItemImage"+position);
-                         viewHolder.myLinearImage.setBackground(drawable);
-                     }
+                     loadDrawload(viewHolder,position,vItem.imgUrl);
+
+
+
+        }
+    }
+
+
+    public void  loadDrawload(final MyViewHolder viewHolder, final int position, String imgUrl){
+        Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
+        if (drawable==null){
+            Log.d("没找到图片缓存","ItemImage"+position);
+            new ImageTask(new ImageTask.Listener() {
+                @Override
+                public void onSuccess(Drawable drawable) {
+                    Log.d("显示图片缓存","ItemImage"+position);
+                    viewHolder.myLinearImage.setBackground(drawable);
+                }
+            }).execute(imgUrl,"ItemImage"+position);
+        }else {
+            Log.d("找到并显示图片缓存","ItemImage"+position);
+            viewHolder.myLinearImage.setBackground(drawable);
         }
     }
 
