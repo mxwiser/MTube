@@ -15,8 +15,10 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.qvqol.mtube.R;
 
@@ -46,6 +48,9 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
+
+        Glide.with(context).load(url).into(new CustomTarget<Drawable>() {
+        });
     }
 
 
@@ -59,7 +64,6 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
                 }
             }).execute(imgUrl,"ItemImage"+position);
         }else {
-
             Log.e("从缓存中找到图片","ItemImage"+position);
            myLinearImage.setBackground(drawable);
         }
