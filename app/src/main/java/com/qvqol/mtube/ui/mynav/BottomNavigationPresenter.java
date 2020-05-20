@@ -128,18 +128,15 @@ public class BottomNavigationPresenter implements MenuPresenter {
             selectedItemId = in.readInt();
             badgeSavedStates = in.readParcelable(getClass().getClassLoader());
         }
-
         @Override
         public int describeContents() {
             return 0;
         }
-
         @Override
         public void writeToParcel(@NonNull Parcel out, int flags) {
             out.writeInt(selectedItemId);
             out.writeParcelable(badgeSavedStates, /* parcelableFlags= */ 0);
         }
-
         public static final Creator<SavedState> CREATOR =
                 new Creator<SavedState>() {
                     @NonNull

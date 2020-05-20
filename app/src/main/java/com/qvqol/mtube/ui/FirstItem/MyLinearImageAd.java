@@ -19,6 +19,5 @@ public class MyLinearImageAd  extends LinearLayout {
         int h= (int) (width*0.3625F);
         heightMeasureSpec= View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
     }
 }

@@ -5,6 +5,7 @@ import com.google.android.material.R;
 
 import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -83,6 +84,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
         this(context, null);
     }
 
+    @SuppressLint("RestrictedApi")
     public BottomNavigationMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
         final Resources res = getResources();
@@ -105,6 +107,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
 
         onClickListener =
                 new OnClickListener() {
+                    @SuppressLint("RestrictedApi")
                     @Override
                     public void onClick(View v) {
                         final BottomNavigationItemView itemView = (BottomNavigationItemView) v;
@@ -495,6 +498,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
         this.presenter = presenter;
     }
 
+    @SuppressLint("RestrictedApi")
     public void buildMenuView() {
         removeAllViews();
         if (buttons != null) {

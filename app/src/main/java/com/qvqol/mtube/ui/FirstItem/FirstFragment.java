@@ -1,42 +1,19 @@
 package com.qvqol.mtube.ui.FirstItem;
-
-import android.annotation.SuppressLint;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.qvqol.mtube.R;
-
-import java.io.InputStream;
-
 public class FirstFragment extends Fragment {
-
-
     public FirstFragment(){
-
     }
     private MyAdapter myAdapter;
     private   SwipeRefreshLayout srl;
@@ -44,8 +21,6 @@ public class FirstFragment extends Fragment {
     private Handler handler;
     private LinearLayoutManager linearLayoutManager;
     private onLoadMoreListener onLoadMoreListener;
-
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -56,9 +31,6 @@ public class FirstFragment extends Fragment {
         initView();
         return root;
     }
-
-
-
     private void initView(){
         handler=new Handler();
         linearLayoutManager=new LinearLayoutManager(getContext());
@@ -73,7 +45,6 @@ public class FirstFragment extends Fragment {
                 }, 80);
             }
         };
-
         srl.setColorSchemeResources(R.color.feng);
         srl.setRefreshing(true);
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -88,15 +59,8 @@ public class FirstFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(myAdapter);
         recyclerView.addOnScrollListener(onLoadMoreListener);
-
         getData("reset");
-
-
     }
-
-
-
-
 int count;
     private void getData(final String type) {
 
@@ -143,15 +107,6 @@ int count;
                 });
             }
         }).start();
-
-
-
-
-
-
     }
-
-
-
 }
 
