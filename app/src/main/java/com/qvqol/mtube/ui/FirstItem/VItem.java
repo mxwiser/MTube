@@ -17,7 +17,7 @@ public class VItem {
     public String imgUrl="";
     public String message="";
     public String adurl="";
-    public String avid="";
+
 
 
 
