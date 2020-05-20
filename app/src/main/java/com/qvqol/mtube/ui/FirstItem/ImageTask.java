@@ -32,7 +32,7 @@ public class ImageTask extends AsyncTask<String,Void, Drawable> {
 
 
 
-    private Drawable loadImageFromNetwork(String imageUrl,String key)
+    public static Drawable loadImageFromNetwork(String imageUrl,String key)
     {
         Drawable drawable = null;
         try {

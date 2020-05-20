@@ -52,10 +52,9 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         else{
 
                     final MyViewHolder viewHolder= (MyViewHolder) holder;
+                    viewHolder.OnBindUI(listItem.get(position),position);
 
-                     final VItem vItem=listItem.get(position);
-                     viewHolder.textView.setText(vItem.title);
-                     loadDrawload(viewHolder,position,vItem.imgUrl);
+                     //loadDrawload(viewHolder,position,vItem.imgUrl);
 
 
 
@@ -63,22 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
 
-    public void  loadDrawload(final MyViewHolder viewHolder, final int position, String imgUrl){
-        Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
-        if (drawable==null){
-            Log.d("没找到图片缓存","ItemImage"+position);
-            new ImageTask(new ImageTask.Listener() {
-                @Override
-                public void onSuccess(Drawable drawable) {
-                    Log.d("显示图片缓存","ItemImage"+position);
-                    viewHolder.myLinearImage.setBackground(drawable);
-                }
-            }).execute(imgUrl,"ItemImage"+position);
-        }else {
-            Log.d("找到并显示图片缓存","ItemImage"+position);
-            viewHolder.myLinearImage.setBackground(drawable);
-        }
-    }
+
 
     @Override
     public int getItemCount() {
