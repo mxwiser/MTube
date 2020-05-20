@@ -134,7 +134,7 @@ public class BottomNavigationView extends FrameLayout {
         this(context, attrs, R.attr.bottomNavigationStyle);
     }
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "PrivateResource"})
     public BottomNavigationView(
             @NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(wrap(context, attrs, defStyleAttr, DEF_STYLE_RES), attrs, defStyleAttr);
