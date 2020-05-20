@@ -30,9 +30,7 @@ public class LoadActivity extends AppCompatActivity {
     }
 
     private  void loadMainItemImage(){
-        for (int i=0;i<5;i++){
-            ImageTask.loadImageFromNetwork("https://qvqol.com/img.png","ItemImage"+i);
-        }
+
     }
     private void  startMain(){
         handler.postDelayed(new Runnable() {
