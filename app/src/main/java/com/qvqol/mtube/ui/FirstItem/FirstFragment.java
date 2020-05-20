@@ -115,7 +115,6 @@ int count;
                 }
                 else if ("refresh".equals(type)) {
                     myAdapter.ClearList();
-                    CacheHelper.clearCache();
                     count = 0;
                     for (int i = 0; i < 10; i++) {
                         count += 1;

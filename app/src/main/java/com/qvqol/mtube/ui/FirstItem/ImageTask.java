@@ -43,8 +43,6 @@ public class ImageTask extends AsyncTask<String,Void, Drawable> {
         } catch (IOException e) {
             Log.d("test", e.getMessage());
         }
-
-
         return drawable ;
     }
 
