@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         handler=new Handler();
         initView();
     }
-
     private void initView(){
                 navView = findViewById(R.id.nav_view);
                 firstitem=navView.findViewById(R.id.navigation_first);
@@ -151,9 +150,6 @@ public class MainActivity extends AppCompatActivity {
         my.setIcon(R.drawable.src_images_tabicons_my);
         my.setTitle(addColor("我的",getResources().getColor(R.color.black)));
     }
-
-
-
     private SpannableStringBuilder addColor(CharSequence text, int color) {
         SpannableStringBuilder builder = new SpannableStringBuilder(text);
         if (color != 0) {
@@ -162,7 +158,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return builder;
     }
-
     private Fragment mContent;
     //只调用一次设置默认fragment
     private void setDefaultFragment(Fragment fm) {
