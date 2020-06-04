@@ -51,6 +51,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
 
     @NonNull private final TransitionSet set;
     private final int inactiveItemMaxWidth;
+
     private final int inactiveItemMinWidth;
     private final int activeItemMaxWidth;
     private final int activeItemMinWidth;
