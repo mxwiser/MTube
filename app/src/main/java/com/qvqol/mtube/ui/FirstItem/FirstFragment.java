@@ -86,6 +86,11 @@ int count;
                     }
                 } else {
                     for (int i = 0; i < 5; i++) {
+
+                       if(i==4){
+
+                           break;
+                       }
                         count += 1;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, url);
                     }
