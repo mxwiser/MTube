@@ -48,10 +48,8 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
 
     private static final int[] CHECKED_STATE_SET = {android.R.attr.state_checked};
     private static final int[] DISABLED_STATE_SET = {-android.R.attr.state_enabled};
-
     @NonNull private final TransitionSet set;
     private final int inactiveItemMaxWidth;
-
     private final int inactiveItemMinWidth;
     private final int activeItemMaxWidth;
     private final int activeItemMinWidth;
