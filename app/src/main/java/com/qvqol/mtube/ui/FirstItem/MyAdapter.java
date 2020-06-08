@@ -38,8 +38,14 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             View view= LayoutInflater.from(context).inflate(R.layout.activity_main_foot,parent,false);
             return  new FootViewHolder(view);
         }else {
-            View view=LayoutInflater.from(context).inflate(R.layout.activity_main_item,parent,false);
-            return new MyViewHolder(view);
+            if (listItem.get(viewType).category==0){
+                View view=LayoutInflater.from(context).inflate(R.layout.activity_main_item,parent,false);
+                return new MyViewHolder(view);
+            }else{
+                View view=LayoutInflater.from(context).inflate(R.layout.activity_main_item_ad,parent,false);
+                return new MyViewHolderAd(view);
+            }
+
         }
 
     }
@@ -47,11 +53,16 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, final int position) {
         if (getItemViewType(position)==TYPE_FOOTER){
-
         }
         else{
-        final MyViewHolder viewHolder= (MyViewHolder) holder;
-        viewHolder.OnBindUI(listItem.get(position),position,context);
+            if (listItem.get(position).category==0){
+                final MyViewHolder viewHolder= (MyViewHolder) holder;
+                viewHolder.OnBindUI(listItem.get(position),position,context);
+            }else if(listItem.get(position).category==1){
+                final MyViewHolderAd viewHolder= (MyViewHolderAd) holder;
+                viewHolder.OnBindUI(listItem.get(position),position,context);
+            }
+
         }
     }
 
