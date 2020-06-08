@@ -1,6 +1,8 @@
 package com.qvqol.mtube;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,11 +21,13 @@ public class LoadActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
         loadLCHImage();
+
         setContentView(R.layout.load);
 
         handler=new Handler();
