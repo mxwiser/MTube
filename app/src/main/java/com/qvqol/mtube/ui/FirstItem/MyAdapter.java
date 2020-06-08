@@ -82,7 +82,6 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void addDateAd(String title, String message, String img,String abdul,boolean isOpen){
         VItem vItem=new VItem();
         vItem.title=title;
-        vItem.message=message;
         vItem.category=1;
         vItem.imgUrl=img;
         vItem.isOpenOnApp=isOpen;
