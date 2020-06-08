@@ -18,16 +18,19 @@
         <com.qvqol.mtube.ui.FirstItem.MyLinearImageAd
             android:layout_width="match_parent"
             android:orientation="vertical"
+            android:id="@+id/adlimage"
             android:background="@drawable/simple"
             android:layout_height="match_parent">
         </com.qvqol.mtube.ui.FirstItem.MyLinearImageAd>
+
         <TextView
             android:id="@+id/adtextItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|left"
-            android:minHeight="35dp"
+            android:minHeight="40dp"
             android:text=" 广告位招商啦"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -87,9 +87,9 @@ int count;
                 } else {
                     for (int i = 0; i < 5; i++) {
 
-                       if(i==4){
-
-                           break;
+                       if(i==0){
+                             myAdapter.addDateAd("广告位招商啦","msg","img","baidu.com",true);
+                             continue;
                        }
                         count += 1;
                         myAdapter.addDate(" 【MTV】 小猪佩奇第"+count+"集","2020-05-14 20:14","99","17:00","",0, url);

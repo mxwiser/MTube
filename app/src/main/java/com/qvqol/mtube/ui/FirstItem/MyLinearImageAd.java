@@ -14,7 +14,7 @@ public class MyLinearImageAd  extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode= View.MeasureSpec.getMode(widthMeasureSpec);
+        //int widthMode= View.MeasureSpec.getMode(widthMeasureSpec);
         int width= View.MeasureSpec.getSize(widthMeasureSpec);
         int h= (int) (width*0.3625F);
         heightMeasureSpec= View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY);

@@ -90,12 +90,12 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         listItem.add(vItem);
     };
 
-    public void addDateAd(String title, String message, String img,String abdul,boolean isOpen){
+    public void addDateAd(String title, String message, String img,String abdul,boolean isOpenOnApp){
         VItem vItem=new VItem();
         vItem.title=title;
         vItem.category=1;
         vItem.imgUrl=img;
-        vItem.isOpenOnApp=isOpen;
+        vItem.isOpenOnApp=isOpenOnApp;
         vItem.adurl=abdul;
         listItem.add(vItem);
     };
