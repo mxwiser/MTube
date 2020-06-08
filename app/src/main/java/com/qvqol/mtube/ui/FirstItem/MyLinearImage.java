@@ -13,7 +13,7 @@ public class MyLinearImage extends LinearLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode=MeasureSpec.getMode(widthMeasureSpec);
+        //int widthMode=MeasureSpec.getMode(widthMeasureSpec);
         int width=MeasureSpec.getSize(widthMeasureSpec);
         int h= (int) (width*0.5625F);
         heightMeasureSpec=MeasureSpec.makeMeasureSpec(h,MeasureSpec.EXACTLY);
