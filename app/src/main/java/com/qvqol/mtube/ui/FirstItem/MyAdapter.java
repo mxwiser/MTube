@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final static int TYPE_CONTENT=0;//正常内容
-    private final static int TYPE_FOOTER=1;//下拉刷新
+    private final static int TYPE_FOOTER=-1;//下拉刷新
     private ArrayList<VItem> listItem;
     private Context context;
     final ThreadPoolExecutor threadPoolExecutor;
@@ -65,7 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (position==listItem.size()){
             return TYPE_FOOTER;
         }
-        return TYPE_CONTENT;
+        return position;
     }
     public void addDate(String title, String time, String hot, String duration, String message, int category, String img){
         VItem vItem=new VItem();

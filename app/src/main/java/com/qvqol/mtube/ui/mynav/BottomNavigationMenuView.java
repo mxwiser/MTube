@@ -552,12 +552,13 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
         menu.getItem(selectedItemPosition).setChecked(true);
     }
 
+    @SuppressLint("RestrictedApi")
     public void updateMenuView() {
         if (menu == null || buttons == null) {
             return;
         }
 
-        final int menuSize = menu.size();
+        @SuppressLint("RestrictedApi") final int menuSize = menu.size();
         if (menuSize != buttons.length) {
             // The size has changed. Rebuild menu view from scratch.
             buildMenuView();
@@ -578,7 +579,7 @@ public class BottomNavigationMenuView extends ViewGroup implements MenuView {
             TransitionManager.beginDelayedTransition(this, set);
         }
 
-        boolean shifting = isShifting(labelVisibilityMode, menu.getVisibleItems().size());
+        @SuppressLint("RestrictedApi") boolean shifting = isShifting(labelVisibilityMode, menu.getVisibleItems().size());
         for (int i = 0; i < menuSize; i++) {
             presenter.setUpdateSuspended(true);
             buttons[i].setLabelVisibilityMode(labelVisibilityMode);
