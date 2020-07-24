@@ -35,18 +35,5 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
             }
         });
     }
-    public void  loadDrawload(final int position, String imgUrl){
-        Drawable drawable=CacheHelper.sLruCache.get("ItemImage"+position);
-        if (drawable==null){
-            new ImageTask(new ImageTask.Listener() {
-                @Override
-                public void onSuccess(Drawable drawable) {
-                   myLinearImage.setBackground(drawable);
-                }
-            }).execute(imgUrl,"ItemImage"+position);
-        }else {
-            Log.e("从缓存中找到图片","ItemImage"+position);
-           myLinearImage.setBackground(drawable);
-        }
-    }
+
 }
