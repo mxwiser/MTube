@@ -24,7 +24,7 @@ public class SecondFragment extends Fragment {
     private ListView listView;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_second, container, false);
+        View root = inflater.inflate(R.layout.fragment_second_tab, container, false);
         root.setBackgroundColor(Color.WHITE);
         return root;
     }

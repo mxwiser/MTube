@@ -4,17 +4,43 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            app:tabSelectedTextColor="#f683a2"
+            app:tabIndicatorColor="#f683a2"
+            app:tabMode="scrollable"
+            app:tabIndicatorHeight="3dp"
+            app:tabTextColor="#000000"
+            android:background="#FFFFFF" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.02"
+            android:background="@android:drawable/bottom_bar" />
+        <CheckBox
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:tabSelectedTextColor="#f683a2"
-        app:tabIndicatorColor="#f683a2"
-        app:tabMode="scrollable"
-        app:tabIndicatorHeight="3dp"
-        app:tabTextColor="#000000"
-        android:background="#FFFFFF" />
+        android:layout_weight="0.01"
+        android:background="@android:drawable/bottom_bar" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
