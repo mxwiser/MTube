@@ -33,6 +33,8 @@ public class SecondFragment extends Fragment {
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(context, getChildFragmentManager());
         ViewPager viewPager =root. findViewById(R.id.view_pager);
+        //为了切换时不再进行碎片生命周期一次性懒加载
+        viewPager.setOffscreenPageLimit(8);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs =root. findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);

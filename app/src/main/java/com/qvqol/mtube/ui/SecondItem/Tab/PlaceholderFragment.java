@@ -21,11 +21,15 @@ import com.qvqol.mtube.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class PlaceholderFragment extends Fragment {
+public class PlaceholderFragment extends BaseFragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private int mCurIndex = -1;
+    /** 标志位，标志已经初始化完成 */
+    private boolean isPrepared;
+    /** 是否已被加载过一次，第二次就不再去请求数据了 */
+    private boolean mHasLoadedOnce;
 
-    private PageViewModel pageViewModel;
     public static PlaceholderFragment newInstance(int index,Context context) {
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle bundle = new Bundle();
@@ -37,14 +41,15 @@ public class PlaceholderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
+
         int index = 1;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
-        pageViewModel.setIndex(index);
+           mCurIndex=index;
     }
     boolean isLoad=false;
+    private TextView textView;
     @SuppressLint("FragmentLiveDataObserve")
     @Override
     public View onCreateView(
@@ -52,26 +57,24 @@ public class PlaceholderFragment extends Fragment {
             Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_second, container, false);
 
-        pageViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                if (!isLoad){isLoad=true;
-                OnLoad(root,s);
-                }else {
-                }
-
-            }
-        });
-
+             textView = root.findViewById(R.id.adddd);
+            isPrepared=true;
+            lazyLoad();
         return root;
     }
-
+    //预加载
     public  void OnLoad(View root,String s){
-        final TextView textView = root.findViewById(R.id.adddd);
-        textView.setText(s);
+
         Toast.makeText(getActivity(),s,3000).show();
     }
 
 
+    @Override
+    protected void lazyLoad() {
+        if (!isPrepared || !isVisible ) {
+            return;
+        }
 
+        textView.setText("dd");
+    }
 }
