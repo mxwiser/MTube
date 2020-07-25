@@ -44,21 +44,34 @@ public class PlaceholderFragment extends Fragment {
         }
         pageViewModel.setIndex(index);
     }
-
+    boolean isLoad=false;
     @SuppressLint("FragmentLiveDataObserve")
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_second, container, false);
-        final TextView textView = root.findViewById(R.id.adddd);
+        final View root = inflater.inflate(R.layout.fragment_second, container, false);
+
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
-                Toast.makeText(getActivity(),s,3000).show();
+                if (!isLoad){isLoad=true;
+                OnLoad(root,s);
+                }else {
+                }
+
             }
         });
+
         return root;
     }
+
+    public  void OnLoad(View root,String s){
+        final TextView textView = root.findViewById(R.id.adddd);
+        textView.setText(s);
+        Toast.makeText(getActivity(),s,3000).show();
+    }
+
+
+
 }
