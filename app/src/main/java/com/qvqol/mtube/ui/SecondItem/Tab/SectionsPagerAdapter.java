@@ -17,7 +17,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
 
-    private static final String[] TAB_TITLES = new String[]{"标签1", "标签2","标签3", "标签4","标签5", "标签6","标签7","标签8"};
+    private static final String[] TAB_TITLES = new String[]{"最新", "免费","VIP"};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

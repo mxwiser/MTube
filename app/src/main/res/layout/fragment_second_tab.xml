@@ -28,17 +28,25 @@
             android:layout_height="match_parent"
             android:layout_weight="0.02"
             android:background="@android:drawable/bottom_bar" />
-        <CheckBox
+
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
-            />
+            android:layout_weight="1"
+            android:gravity="center"
+             >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/src_images_search" />
+        </LinearLayout>
     </LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.01"
+        android:layout_weight="0.03"
         android:background="@android:drawable/bottom_bar" />
 
     <androidx.viewpager.widget.ViewPager
