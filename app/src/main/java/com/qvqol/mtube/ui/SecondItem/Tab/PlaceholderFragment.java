@@ -1,5 +1,6 @@
 package com.qvqol.mtube.ui.SecondItem.Tab;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,12 +44,13 @@ public class PlaceholderFragment extends Fragment {
         pageViewModel.setIndex(index);
     }
 
+    @SuppressLint("FragmentLiveDataObserve")
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_s, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
+        View root = inflater.inflate(R.layout.fragment_second, container, false);
+        final TextView textView = root.findViewById(R.id.adddd);
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
