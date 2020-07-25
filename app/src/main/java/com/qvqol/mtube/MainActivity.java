@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 fifthbadge.setBadgeGravity(Gravity.END|Gravity.TOP);
                 //init fragment
                 firstFragment=new FirstFragment();
-                secondFragment=new SecondFragment();
+                secondFragment=new SecondFragment(this);
                 thirdFragment=new ThirdFragment();
                 fourthFragment=new FourthFragment();
                 fifthFragment=new FifthFragment();

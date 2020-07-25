@@ -11,7 +11,9 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
 import com.qvqol.mtube.R;
 import com.qvqol.mtube.ui.SecondItem.Tab.SectionsPagerAdapter;
 
@@ -30,6 +32,10 @@ public class SecondFragment extends Fragment {
         root.setBackgroundColor(Color.WHITE);
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(context, getChildFragmentManager());
+        ViewPager viewPager =root. findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs =root. findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
         return root;
     }
 }
