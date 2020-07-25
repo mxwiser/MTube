@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    @StringRes
+
     private static final String[] TAB_TITLES = new String[]{"标签1", "标签2","标签3", "标签4","标签5", "标签6","标签7","标签8"};
     private final Context mContext;
 
@@ -29,7 +29,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        return PlaceholderFragment.newInstance(position ,mContext);
     }
 
     @Nullable
@@ -41,6 +41,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 8;
+        return TAB_TITLES.length;
     }
 }

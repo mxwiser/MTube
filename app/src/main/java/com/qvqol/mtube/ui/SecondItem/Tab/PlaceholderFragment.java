@@ -1,11 +1,13 @@
 package com.qvqol.mtube.ui.SecondItem.Tab;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -24,8 +26,7 @@ public class PlaceholderFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private PageViewModel pageViewModel;
-
-    public static PlaceholderFragment newInstance(int index) {
+    public static PlaceholderFragment newInstance(int index,Context context) {
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
@@ -55,6 +56,7 @@ public class PlaceholderFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+                Toast.makeText(getActivity(),s,3000).show();
             }
         });
         return root;
