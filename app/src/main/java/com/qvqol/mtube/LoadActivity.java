@@ -28,7 +28,6 @@ public class LoadActivity extends AppCompatActivity {
         this.getSupportActionBar().hide();
         loadLCHImage();
         setContentView(R.layout.load);
-
         handler=new Handler();
         new Thread(new Runnable() {
             @Override
