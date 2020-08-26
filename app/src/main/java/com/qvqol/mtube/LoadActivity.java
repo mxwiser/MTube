@@ -18,10 +18,6 @@ import java.util.concurrent.ExecutionException;
 
 public class LoadActivity extends AppCompatActivity {
     Handler handler;
-
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
