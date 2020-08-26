@@ -23,6 +23,5 @@ public class FifthFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_fifth, container, false);
         root.setBackgroundColor(Color.WHITE);
         return root;
-
     }
 }
