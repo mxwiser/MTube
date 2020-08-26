@@ -27,8 +27,6 @@ public class LoadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.getSupportActionBar().hide();
         loadLCHImage();
-
-
         setContentView(R.layout.load);
 
         handler=new Handler();
