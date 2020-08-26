@@ -52,6 +52,7 @@ public class LoadActivity extends AppCompatActivity {
                 Intent i=new Intent(LoadActivity.this,MainActivity.class);
                 startActivity(i);
                 finish();
+
             }
         },500);
     }
