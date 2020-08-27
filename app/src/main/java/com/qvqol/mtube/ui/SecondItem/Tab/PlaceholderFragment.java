@@ -29,7 +29,6 @@ public class PlaceholderFragment extends BaseFragment {
     private boolean isPrepared;
     /** 是否已被加载过一次，第二次就不再去请求数据了 */
     private boolean mHasLoadedOnce;
-
     public static PlaceholderFragment newInstance(int index,Context context) {
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle bundle = new Bundle();
