@@ -17,7 +17,6 @@ public abstract class onLoadMoreListener extends RecyclerView.OnScrollListener {
      * @param lastItem  最后显示的position
      */
     protected abstract void onLoading(int countItem, int lastItem);
-
     @Override
     public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
 /*        if (newState==SCROLL_STATE_IDLE){
