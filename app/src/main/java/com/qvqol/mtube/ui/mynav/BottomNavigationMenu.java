@@ -15,11 +15,9 @@ import android.view.SubMenu;
 @RestrictTo(LIBRARY_GROUP)
 public final class BottomNavigationMenu extends MenuBuilder {
     public static final int MAX_ITEM_COUNT = 5;
-
     public BottomNavigationMenu(Context context) {
         super(context);
     }
-
     @NonNull
     @Override
     public SubMenu addSubMenu(int group, int id, int categoryOrder, CharSequence title) {
