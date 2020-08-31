@@ -10,7 +10,6 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.view.menu.MenuItemImpl;
 import android.view.MenuItem;
 import android.view.SubMenu;
-
 /** @hide */
 @SuppressLint("RestrictedApi")
 @RestrictTo(LIBRARY_GROUP)
