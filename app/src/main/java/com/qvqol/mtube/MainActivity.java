@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
        //firstbagde.setGravityOffset(10,10,true);
        //firstbagde.setShowShadow(false);
        //firstbagde.setBadgeText("");
-
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
